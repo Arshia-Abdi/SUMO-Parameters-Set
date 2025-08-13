@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-10-02 23:27:12 by Eclipse SUMO netedit Version 1.20.0
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- Vehicle Types -->
+    <vType id="simple_pkw" accel="2.6" decel="4.5" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="70.0" color="1,0,0"/>
+    <vType id="simple_pkw_as_platoon_leader" accel="2.6" decel="4.5" sigma="0.5" length="5.0" minGap="1.0" maxSpeed="70.0" color="0,1,0"/>
+    <vType id="simple_pkw_as_platoon_follower" accel="2.6" decel="4.5" sigma="0.5" length="5.0" minGap="0.5" maxSpeed="70.0" color="0,0,1"/>
+
+
+    <!-- Routes -->
+    <route id="r_0" edges="TL1_LtoO TL1_OtoD"/>
+    <route id="r_1" edges="TL1_LtoO TL2_LtoO TL2_OtoD"/>
+    <route id="r_10" edges="TL1_DtoO TL2_LtoO TL3_LtoO TL3_OtoD"/>
+    <route id="r_11" edges="TL1_DtoO TL2_LtoO TL3_LtoO TL4_LtoO TL4_OtoD"/>
+    <route id="r_12" edges="TL1_DtoO TL2_LtoO TL3_LtoO TL4_LtoO TL4_OtoR"/>
+    <route id="r_13" edges="TL1_DtoO TL2_LtoO TL3_LtoO TL4_LtoO TL4_OtoU"/>
+    <route id="r_14" edges="TL1_DtoO TL2_LtoO TL3_LtoO TL3_OtoU"/>
+    <route id="r_15" edges="TL1_DtoO TL2_LtoO TL2_OtoU"/>
+    <route id="r_16" edges="TL1_DtoO TL1_OtoU"/>
+    <route id="r_17" edges="TL1_DtoO TL1_OtoL"/>
+    <route id="r_18" edges="TL2_DtoO TL3_LtoO TL3_OtoD"/>
+    <route id="r_19" edges="TL2_DtoO TL3_LtoO TL4_LtoO TL4_OtoD"/>
+    <route id="r_2" edges="TL1_LtoO TL2_LtoO TL3_LtoO TL3_OtoD"/>
+    <route id="r_20" edges="TL2_DtoO TL3_LtoO TL4_LtoO TL4_OtoU"/>
+    <route id="r_21" edges="TL2_DtoO TL3_LtoO TL3_OtoU"/>
+    <route id="r_22" edges="TL2_DtoO TL2_OtoU"/>
+    <route id="r_23" edges="TL2_DtoO TL1_RtoO TL1_OtoU"/>
+    <route id="r_24" edges="TL2_DtoO TL1_RtoO TL1_OtoL"/>
+    <route id="r_25" edges="TL2_DtoO TL1_RtoO TL1_OtoD"/>
+    <route id="r_26" edges="TL3_DtoO TL4_LtoO TL4_OtoD"/>
+    <route id="r_27" edges="TL3_DtoO TL4_LtoO TL4_OtoR"/>
+    <route id="r_28" edges="TL3_DtoO TL4_LtoO TL4_OtoU"/>
+    <route id="r_29" edges="TL3_DtoO TL4_LtoO TL4_OtoU"/>
+    <route id="r_3" edges="TL1_LtoO TL2_LtoO TL3_LtoO TL4_LtoO TL4_OtoD"/>
+    <route id="r_30" edges="TL3_DtoO TL3_OtoU"/>
+    <route id="r_31" edges="TL3_DtoO TL2_RtoO TL2_OtoU"/>
+    <route id="r_32" edges="TL3_DtoO TL2_RtoO TL1_RtoO TL1_OtoU"/>
+    <route id="r_33" edges="TL3_DtoO TL2_RtoO TL1_RtoO TL1_OtoL"/>
+    <route id="r_34" edges="TL3_DtoO TL2_RtoO TL1_RtoO TL1_OtoD"/>
+    <route id="r_35" edges="TL3_DtoO TL2_RtoO TL2_OtoD"/>
+    <route id="r_36" edges="TL4_DtoO TL4_OtoR"/>
+    <route id="r_37" edges="TL4_DtoO TL4_OtoU"/>
+    <route id="r_38" edges="TL4_DtoO TL3_RtoO TL3_OtoU"/>
+    <route id="r_39" edges="TL4_DtoO TL3_RtoO TL2_RtoO TL2_OtoU"/>
+    <route id="r_4" edges="TL1_LtoO TL2_LtoO TL3_LtoO TL4_LtoO TL4_OtoR"/>
+    <route id="r_40" edges="TL4_DtoO TL3_RtoO TL2_RtoO TL1_RtoO TL1_OtoU"/>
+    <route id="r_41" edges="TL4_DtoO TL3_RtoO TL2_RtoO TL1_RtoO TL1_OtoL"/>
+    <route id="r_42" edges="TL4_DtoO TL3_RtoO TL2_RtoO TL1_RtoO TL1_OtoD"/>
+    <route id="r_43" edges="TL4_DtoO TL3_RtoO TL2_RtoO TL2_OtoD"/>
+    <route id="r_44" edges="TL4_DtoO TL3_RtoO TL3_OtoD"/>
+    <route id="r_45" edges="TL4_RtoO TL4_OtoU"/>
+    <route id="r_46" edges="TL4_RtoO TL3_RtoO TL3_OtoU"/>
+    <route id="r_47" edges="TL4_RtoO TL3_RtoO TL2_RtoO TL2_OtoU"/>
+    <route id="r_48" edges="TL4_RtoO TL3_RtoO TL2_RtoO TL1_RtoO TL1_OtoU"/>
+    <route id="r_49" edges="TL4_RtoO TL3_RtoO TL2_RtoO TL1_RtoO TL1_OtoL"/>
+    <route id="r_5" edges="TL1_LtoO TL2_LtoO TL3_LtoO TL4_LtoO TL4_OtoU"/>
+    <route id="r_50" edges="TL4_RtoO TL3_RtoO TL2_RtoO TL1_RtoO TL1_OtoD"/>
+    <route id="r_51" edges="TL4_RtoO TL3_RtoO TL2_RtoO TL2_OtoD"/>
+    <route id="r_52" edges="TL4_RtoO TL3_RtoO TL3_OtoD"/>
+    <route id="r_53" edges="TL4_RtoO TL4_OtoD"/>
+    <route id="r_54" edges="TL4_UtoO TL3_RtoO TL3_OtoU"/>
+    <route id="r_55" edges="TL4_UtoO TL3_RtoO TL2_RtoO TL2_OtoU"/>
+    <route id="r_56" edges="TL4_UtoO TL3_RtoO TL2_RtoO TL1_RtoO TL1_OtoU"/>
+    <route id="r_57" edges="TL4_UtoO TL3_RtoO TL2_RtoO TL1_RtoO TL1_OtoL"/>
+    <route id="r_58" edges="TL4_UtoO TL3_RtoO TL2_RtoO TL1_RtoO TL1_OtoD"/>
+    <route id="r_59" edges="TL4_UtoO TL3_RtoO TL2_RtoO TL2_OtoD"/>
+    <route id="r_6" edges="TL1_LtoO TL2_LtoO TL3_LtoO TL3_OtoU"/>
+    <route id="r_60" edges="TL4_UtoO TL3_RtoO TL3_OtoD"/>
+    <route id="r_61" edges="TL4_UtoO TL4_OtoD"/>
+    <route id="r_62" edges="TL4_UtoO TL4_OtoR"/>
+    <route id="r_63" edges="TL3_UtoO TL2_RtoO TL2_OtoU"/>
+    <route id="r_64" edges="TL3_UtoO TL2_RtoO TL1_RtoO TL1_OtoU"/>
+    <route id="r_65" edges="TL3_UtoO TL2_RtoO TL1_RtoO TL1_OtoL"/>
+    <route id="r_66" edges="TL3_UtoO TL2_RtoO TL1_RtoO TL1_OtoD"/>
+    <route id="r_67" edges="TL3_UtoO TL2_RtoO TL2_OtoD"/>
+    <route id="r_68" edges="TL3_UtoO TL3_OtoD"/>
+    <route id="r_69" edges="TL3_UtoO TL4_LtoO TL4_OtoD"/>
+    <route id="r_7" edges="TL1_LtoO TL2_LtoO TL2_OtoU"/>
+    <route id="r_70" edges="TL3_UtoO TL4_LtoO TL4_OtoR"/>
+    <route id="r_71" edges="TL3_UtoO TL4_LtoO TL4_OtoU"/>
+    <route id="r_72" edges="TL2_UtoO TL1_RtoO TL1_OtoU"/>
+    <route id="r_73" edges="TL2_UtoO TL1_RtoO TL1_OtoL"/>
+    <route id="r_74" edges="TL2_UtoO TL1_RtoO TL1_OtoD"/>
+    <route id="r_75" edges="TL2_UtoO TL2_OtoD"/>
+    <route id="r_76" edges="TL2_UtoO TL3_LtoO TL3_OtoD"/>
+    <route id="r_77" edges="TL2_UtoO TL3_LtoO TL4_LtoO TL4_OtoD"/>
+    <route id="r_78" edges="TL2_UtoO TL3_LtoO TL4_LtoO TL4_OtoR"/>
+    <route id="r_79" edges="TL2_UtoO TL3_LtoO TL4_LtoO TL4_OtoU"/>
+    <route id="r_8" edges="TL1_LtoO TL1_OtoU"/>
+    <route id="r_80" edges="TL2_UtoO TL3_LtoO TL3_OtoU"/>
+    <route id="r_81" edges="TL1_UtoO TL1_OtoL"/>
+    <route id="r_82" edges="TL1_UtoO TL1_OtoD"/>
+    <route id="r_83" edges="TL1_UtoO TL2_LtoO TL2_OtoD"/>
+    <route id="r_84" edges="TL1_UtoO TL2_LtoO TL3_LtoO TL3_OtoD"/>
+    <route id="r_85" edges="TL1_UtoO TL2_LtoO TL3_LtoO TL4_LtoO TL4_OtoD"/>
+    <route id="r_86" edges="TL1_UtoO TL2_LtoO TL3_LtoO TL4_LtoO TL4_OtoR"/>
+    <route id="r_87" edges="TL1_UtoO TL2_LtoO TL3_LtoO TL4_LtoO TL4_OtoU"/>
+    <route id="r_88" edges="TL1_UtoO TL2_LtoO TL3_LtoO TL3_OtoU"/>
+    <route id="r_89" edges="TL1_UtoO TL2_LtoO TL2_OtoU"/>
+    <route id="r_9" edges="TL1_DtoO TL2_LtoO TL2_OtoD"/>
+    <!-- Vehicles, persons and containers (sorted by depart) -->
+    <flow id="f_0" begin="0.00" from="TL1_LtoO" to="TL1_OtoD" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_1" begin="0.00" from="TL1_LtoO" to="TL2_OtoD" via="TL2_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_10" begin="0.00" from="TL1_DtoO" to="TL3_OtoD" via="TL2_LtoO TL3_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_11" begin="0.00" from="TL1_DtoO" to="TL4_OtoD" via="TL2_LtoO TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_12" begin="0.00" from="TL1_DtoO" to="TL4_OtoR" via="TL2_LtoO TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_13" begin="0.00" from="TL1_DtoO" to="TL4_OtoU" via="TL2_LtoO TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_14" begin="0.00" from="TL1_DtoO" to="TL3_OtoU" via="TL2_LtoO TL3_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_15" begin="0.00" from="TL1_DtoO" to="TL2_OtoU" via="TL2_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_16" begin="0.00" from="TL1_DtoO" to="TL1_OtoU" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_17" begin="0.00" from="TL1_DtoO" to="TL1_OtoL" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_18" begin="0.00" from="TL2_DtoO" to="TL3_OtoD" via="TL3_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_19" begin="0.00" from="TL2_DtoO" to="TL4_OtoD" via="TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_2" begin="0.00" from="TL1_LtoO" to="TL3_OtoD" via="TL2_LtoO TL3_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_20" begin="0.00" from="TL2_DtoO" to="TL4_OtoR" via="TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_21" begin="0.00" from="TL2_DtoO" to="TL4_OtoU" via="TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_22" begin="0.00" from="TL2_DtoO" to="TL3_OtoU" via="TL3_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_23" begin="0.00" from="TL2_DtoO" to="TL2_OtoU" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_24" begin="0.00" from="TL2_DtoO" to="TL1_OtoU" via="TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_25" begin="0.00" from="TL2_DtoO" to="TL1_OtoL" via="TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_26" begin="0.00" from="TL2_DtoO" to="TL1_OtoD" via="TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_27" begin="0.00" from="TL3_DtoO" to="TL4_OtoD" via="TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_28" begin="0.00" from="TL3_DtoO" to="TL4_OtoR" via="TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_29" begin="0.00" from="TL3_DtoO" to="TL4_OtoU" via="TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_3" begin="0.00" from="TL1_LtoO" to="TL4_OtoD" via="TL2_LtoO TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_30" begin="0.00" from="TL3_DtoO" to="TL3_OtoU" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_31" begin="0.00" from="TL3_DtoO" to="TL2_OtoU" via="TL2_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_32" begin="0.00" from="TL3_DtoO" to="TL1_OtoU" via="TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_33" begin="0.00" from="TL3_DtoO" to="TL1_OtoL" via="TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_34" begin="0.00" from="TL3_DtoO" to="TL1_OtoD" via="TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_35" begin="0.00" from="TL3_DtoO" to="TL2_OtoD" via="TL2_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_36" begin="0.00" from="TL4_DtoO" to="TL4_OtoR" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_37" begin="0.00" from="TL4_DtoO" to="TL4_OtoU" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_38" begin="0.00" from="TL4_DtoO" to="TL3_OtoU" via="TL3_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_39" begin="0.00" from="TL4_DtoO" to="TL2_OtoU" via="TL3_RtoO TL2_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_4" begin="0.00" from="TL1_LtoO" to="TL4_OtoR" via="TL2_LtoO TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_40" begin="0.00" from="TL4_DtoO" to="TL1_OtoU" via="TL3_RtoO TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_41" begin="0.00" from="TL4_DtoO" to="TL1_OtoL" via="TL3_RtoO TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_42" begin="0.00" from="TL4_DtoO" to="TL1_OtoD" via="TL3_RtoO TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_43" begin="0.00" from="TL4_DtoO" to="TL2_OtoD" via="TL3_RtoO TL2_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_44" begin="0.00" from="TL4_DtoO" to="TL3_OtoD" via="TL3_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_45" begin="0.00" from="TL4_RtoO" to="TL4_OtoU" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_46" begin="0.00" from="TL4_RtoO" to="TL3_OtoU" via="TL3_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_47" begin="0.00" from="TL4_RtoO" to="TL2_OtoU" via="TL3_RtoO TL2_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_48" begin="0.00" from="TL4_RtoO" to="TL1_OtoU" via="TL3_RtoO TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_49" begin="0.00" from="TL4_RtoO" to="TL1_OtoL" via="TL3_RtoO TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_5" begin="0.00" from="TL1_LtoO" to="TL4_OtoU" via="TL2_LtoO TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_50" begin="0.00" from="TL4_RtoO" to="TL1_OtoD" via="TL3_RtoO TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_51" begin="0.00" from="TL4_RtoO" to="TL2_OtoD" via="TL3_RtoO TL2_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_52" begin="0.00" from="TL4_RtoO" to="TL3_OtoD" via="TL3_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_53" begin="0.00" from="TL4_RtoO" to="TL4_OtoD" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_54" begin="0.00" from="TL4_UtoO" to="TL3_OtoU" via="TL3_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_55" begin="0.00" from="TL4_UtoO" to="TL2_OtoU" via="TL3_RtoO TL2_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_56" begin="0.00" from="TL4_UtoO" to="TL1_OtoU" via="TL3_RtoO TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_57" begin="0.00" from="TL4_UtoO" to="TL1_OtoL" via="TL3_RtoO TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_58" begin="0.00" from="TL4_UtoO" to="TL1_OtoD" via="TL3_RtoO TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_59" begin="0.00" from="TL4_UtoO" to="TL2_OtoD" via="TL3_RtoO TL2_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_6" begin="0.00" from="TL1_LtoO" to="TL3_OtoU" via="TL2_LtoO TL3_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_60" begin="0.00" from="TL4_UtoO" to="TL3_OtoD" via="TL3_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_61" begin="0.00" from="TL4_UtoO" to="TL4_OtoD" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_62" begin="0.00" from="TL4_UtoO" to="TL4_OtoR" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_63" begin="0.00" from="TL3_UtoO" to="TL2_OtoU" via="TL2_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_64" begin="0.00" from="TL3_UtoO" to="TL1_OtoU" via="TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_65" begin="0.00" from="TL3_UtoO" to="TL1_OtoL" via="TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_66" begin="0.00" from="TL3_UtoO" to="TL1_OtoD" via="TL2_RtoO TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_67" begin="0.00" from="TL3_UtoO" to="TL2_OtoD" via="TL2_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_68" begin="0.00" from="TL3_UtoO" to="TL3_OtoD" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_69" begin="0.00" from="TL3_UtoO" to="TL4_OtoD" via="TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_7" begin="0.00" from="TL1_LtoO" to="TL2_OtoU" via="TL2_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_70" begin="0.00" from="TL3_UtoO" to="TL4_OtoR" via="TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_71" begin="0.00" from="TL3_UtoO" to="TL4_OtoU" via="TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_72" begin="0.00" from="TL2_UtoO" to="TL1_OtoU" via="TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_73" begin="0.00" from="TL2_UtoO" to="TL1_OtoL" via="TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_74" begin="0.00" from="TL2_UtoO" to="TL1_OtoD" via="TL1_RtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_75" begin="0.00" from="TL2_UtoO" to="TL2_OtoD" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_76" begin="0.00" from="TL2_UtoO" to="TL3_OtoD" via="TL3_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_77" begin="0.00" from="TL2_UtoO" to="TL4_OtoD" via="TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_78" begin="0.00" from="TL2_UtoO" to="TL4_OtoR" via="TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_79" begin="0.00" from="TL2_UtoO" to="TL4_OtoU" via="TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_8" begin="0.00" from="TL1_LtoO" to="TL1_OtoU" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_80" begin="0.00" from="TL2_UtoO" to="TL3_OtoU" via="TL3_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_81" begin="0.00" from="TL1_UtoO" to="TL1_OtoL" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_82" begin="0.00" from="TL1_UtoO" to="TL1_OtoD" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_83" begin="0.00" from="TL1_UtoO" to="TL2_OtoD" via="TL2_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_84" begin="0.00" from="TL1_UtoO" to="TL3_OtoD" via="TL2_LtoO TL3_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_85" begin="0.00" from="TL1_UtoO" to="TL4_OtoD" via="TL2_LtoO TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_86" begin="0.00" from="TL1_UtoO" to="TL4_OtoR" via="TL2_LtoO TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_87" begin="0.00" from="TL1_UtoO" to="TL4_OtoU" via="TL2_LtoO TL3_LtoO TL4_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_88" begin="0.00" from="TL1_UtoO" to="TL3_OtoU" via="TL2_LtoO TL3_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_89" begin="0.00" from="TL1_UtoO" to="TL2_OtoU" via="TL2_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+    <flow id="f_9" begin="0.00" from="TL1_DtoO" to="TL2_OtoD" via="TL2_LtoO" end="900.00" vehsPerHour="20" type="simple_pkw"/>
+</routes>
