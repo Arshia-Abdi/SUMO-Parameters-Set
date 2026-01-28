@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <vType id="car" vClass="passenger" length="5.0" minGap="2.5" maxSpeed="13.89" accel="2.6" decel="4.5" sigma="0.5"/>
+    <vType id="emergency_car" vClass="emergency" color="1,0,0" length="5.0" minGap="2.5" maxSpeed="20.0" accel="3.0" decel="6.0" sigma="0.5"/>
+
+    <route id="r_0" edges="Donore_DownL2OL Circular_OL2OR Clanbrassil_OR2DownR"/>
+    <route id="r_1" edges="Donore_DownL2OL Circular_OL2OR Circular_OR2Right"/>
+    <route id="r_2" edges="Donore_DownL2OL Circular_OL2OR Clanbrassil_OR2UpR"/>
+    <route id="r_3" edges="Donore_DownL2OL Donore_OL2UpL"/>
+    <route id="r_4" edges="Donore_DownL2OL Circular_OL2Left"/>
+
+    <route id="r_5" edges="Clanbrassil_DownR2OR Circular_OR2Right"/>
+    <route id="r_6" edges="Clanbrassil_DownR2OR Clanbrassil_OR2UpR"/>
+    <route id="r_7" edges="Clanbrassil_DownR2OR Circular_OR2OL Donore_OL2UpL"/>
+    <route id="r_8" edges="Clanbrassil_DownR2OR Circular_OR2OL Circular_OL2Left"/>
+    <route id="r_9" edges="Clanbrassil_DownR2OR Circular_OR2OL Donore_OL2DownL"/>
+
+    <route id="r_10" edges="Circular_Right2OR Clanbrassil_OR2UpR"/>
+    <route id="r_11" edges="Circular_Right2OR Circular_OR2OL Donore_OL2UpL"/>
+    <route id="r_12" edges="Circular_Right2OR Circular_OR2OL Circular_OL2Left"/>
+    <route id="r_13" edges="Circular_Right2OR Circular_OR2OL Donore_OL2DownL"/>
+    <route id="r_14" edges="Circular_Right2OR Clanbrassil_OR2DownR"/>
+
+    <route id="r_15" edges="Clanbrassil_UpR2OR Circular_OR2OL Donore_OL2UpL"/>
+    <route id="r_16" edges="Clanbrassil_UpR2OR Circular_OR2OL Circular_OL2Left"/>
+    <route id="r_17" edges="Clanbrassil_UpR2OR Circular_OR2OL Donore_OL2DownL"/>
+    <route id="r_18" edges="Clanbrassil_UpR2OR Clanbrassil_OR2DownR"/>
+    <route id="r_19" edges="Clanbrassil_UpR2OR Circular_OR2Right"/>
+
+    <route id="r_20" edges="Donore_UpL2OL Circular_OL2OR Clanbrassil_OR2DownR"/>
+    <route id="r_21" edges="Donore_UpL2OL Circular_OL2OR Circular_OR2Right"/>
+    <route id="r_22" edges="Donore_UpL2OL Circular_OL2OR Clanbrassil_OR2UpR"/>
+    <route id="r_23" edges="Donore_UpL2OL Donore_OL2DownL"/>
+    <route id="r_24" edges="Donore_UpL2OL Circular_OL2Left"/>
+
+    <route id="r_25" edges="Circular_Left2OL Donore_OL2DownL"/>
+    <route id="r_26" edges="Circular_Left2OL Circular_OL2OR Clanbrassil_OR2DownR"/>
+    <route id="r_27" edges="Circular_Left2OL Circular_OL2OR Circular_OR2Right"/>
+    <route id="r_28" edges="Circular_Left2OL Circular_OL2OR Clanbrassil_OR2UpR"/>
+    <route id="r_29" edges="Circular_Left2OL Donore_OL2UpL"/>
+
+    <routeDistribution id="dist_donore_south" routes="r_0 r_1 r_2 r_3 r_4" probabilities="0.2 0.2 0.2 0.2 0.2"/>
+    <routeDistribution id="dist_donore_north" routes="r_20 r_21 r_22 r_23 r_24" probabilities="0.2 0.2 0.2 0.2 0.2"/>
+    <routeDistribution id="dist_clan_down" routes="r_5 r_6 r_7 r_8 r_9" probabilities="0.2 0.2 0.2 0.2 0.2"/>
+    <routeDistribution id="dist_circ_right" routes="r_10 r_11 r_12 r_13 r_14" probabilities="0.2 0.2 0.2 0.2 0.2"/>
+    <routeDistribution id="dist_clan_up" routes="r_15 r_16 r_17 r_18 r_19" probabilities="0.2 0.2 0.2 0.2 0.2"/>
+    <routeDistribution id="dist_circ_left" routes="r_25 r_26 r_27 r_28 r_29" probabilities="0.2 0.2 0.2 0.2 0.2"/>
+
+    <flow id="f07_clan_up" begin="0" end="3600" vehsPerHour="205" type="car" route="dist_clan_up" departLane="best"/>
+    <flow id="f07_clan_down" begin="0" end="3600" vehsPerHour="205" type="car" route="dist_clan_down" departLane="best"/>
+    <flow id="f07_donore_north" begin="0" end="3600" vehsPerHour="126" type="car" route="dist_donore_north" departLane="best"/>
+    <flow id="f07_donore_south" begin="0" end="3600" vehsPerHour="125" type="car" route="dist_donore_south" departLane="best"/>
+    <flow id="f07_circ_left" begin="0" end="3600" vehsPerHour="170" type="car" route="dist_circ_left" departLane="best"/>
+    <flow id="f07_circ_right" begin="0" end="3600" vehsPerHour="278" type="car" route="dist_circ_right" departLane="best"/>
+    
+    <flow id="em_07_1" begin="450" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_07_2" begin="920" number="1" type="emergency_car" route="dist_donore_south" departLane="best"/>
+    <flow id="em_07_3" begin="1340" number="1" type="emergency_car" route="dist_circ_left" departLane="best"/>
+    <flow id="em_07_4" begin="1800" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_07_5" begin="2450" number="1" type="emergency_car" route="dist_donore_north" departLane="best"/>
+    <flow id="em_07_6" begin="2900" number="1" type="emergency_car" route="dist_circ_right" departLane="best"/>
+    <flow id="em_07_7" begin="3400" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f08_clan_up" begin="3600" end="7200" vehsPerHour="185" type="car" route="dist_clan_up" departLane="best"/>
+    <flow id="f08_clan_down" begin="3600" end="7200" vehsPerHour="184" type="car" route="dist_clan_down" departLane="best"/>
+    <flow id="f08_donore_north" begin="3600" end="7200" vehsPerHour="140" type="car" route="dist_donore_north" departLane="best"/>
+    <flow id="f08_donore_south" begin="3600" end="7200" vehsPerHour="139" type="car" route="dist_donore_south" departLane="best"/>
+    <flow id="f08_circ_left" begin="3600" end="7200" vehsPerHour="208" type="car" route="dist_circ_left" departLane="best"/>
+    <flow id="f08_circ_right" begin="3600" end="7200" vehsPerHour="267" type="car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="em_08_1" begin="3900" number="1" type="emergency_car" route="dist_donore_north" departLane="best"/>
+    <flow id="em_08_2" begin="4250" number="1" type="emergency_car" route="dist_circ_left" departLane="best"/>
+    <flow id="em_08_3" begin="4800" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_08_4" begin="5300" number="1" type="emergency_car" route="dist_donore_south" departLane="best"/>
+    <flow id="em_08_5" begin="6100" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_08_6" begin="6900" number="1" type="emergency_car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="f09_clan_up" begin="7200" end="10800" vehsPerHour="216" type="car" route="dist_clan_up" departLane="best"/>
+    <flow id="f09_clan_down" begin="7200" end="10800" vehsPerHour="215" type="car" route="dist_clan_down" departLane="best"/>
+    <flow id="f09_donore_north" begin="7200" end="10800" vehsPerHour="116" type="car" route="dist_donore_north" departLane="best"/>
+    <flow id="f09_donore_south" begin="7200" end="10800" vehsPerHour="116" type="car" route="dist_donore_south" departLane="best"/>
+    <flow id="f09_circ_left" begin="7200" end="10800" vehsPerHour="203" type="car" route="dist_circ_left" departLane="best"/>
+    <flow id="f09_circ_right" begin="7200" end="10800" vehsPerHour="254" type="car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="em_09_1" begin="7500" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_09_2" begin="8100" number="1" type="emergency_car" route="dist_circ_right" departLane="best"/>
+    <flow id="em_09_3" begin="8600" number="1" type="emergency_car" route="dist_donore_north" departLane="best"/>
+    <flow id="em_09_4" begin="9200" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_09_5" begin="9800" number="1" type="emergency_car" route="dist_donore_south" departLane="best"/>
+    <flow id="em_09_6" begin="10200" number="1" type="emergency_car" route="dist_circ_left" departLane="best"/>
+    <flow id="em_09_7" begin="10500" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_09_8" begin="10750" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f10_clan_up" begin="10800" end="14400" vehsPerHour="176" type="car" route="dist_clan_up" departLane="best"/>
+    <flow id="f10_clan_down" begin="10800" end="14400" vehsPerHour="175" type="car" route="dist_clan_down" departLane="best"/>
+    <flow id="f10_donore_north" begin="10800" end="14400" vehsPerHour="82" type="car" route="dist_donore_north" departLane="best"/>
+    <flow id="f10_donore_south" begin="10800" end="14400" vehsPerHour="81" type="car" route="dist_donore_south" departLane="best"/>
+    <flow id="f10_circ_left" begin="10800" end="14400" vehsPerHour="191" type="car" route="dist_circ_left" departLane="best"/>
+    <flow id="f10_circ_right" begin="10800" end="14400" vehsPerHour="244" type="car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="em_10_1" begin="11200" number="1" type="emergency_car" route="dist_donore_south" departLane="best"/>
+    <flow id="em_10_2" begin="11900" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_10_3" begin="12500" number="1" type="emergency_car" route="dist_circ_left" departLane="best"/>
+    <flow id="em_10_4" begin="13100" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_10_5" begin="13800" number="1" type="emergency_car" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f11_clan_up" begin="14400" end="18000" vehsPerHour="155" type="car" route="dist_clan_up" departLane="best"/>
+    <flow id="f11_clan_down" begin="14400" end="18000" vehsPerHour="154" type="car" route="dist_clan_down" departLane="best"/>
+    <flow id="f11_donore_north" begin="14400" end="18000" vehsPerHour="77" type="car" route="dist_donore_north" departLane="best"/>
+    <flow id="f11_donore_south" begin="14400" end="18000" vehsPerHour="76" type="car" route="dist_donore_south" departLane="best"/>
+    <flow id="f11_circ_left" begin="14400" end="18000" vehsPerHour="198" type="car" route="dist_circ_left" departLane="best"/>
+    <flow id="f11_circ_right" begin="14400" end="18000" vehsPerHour="214" type="car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="em_11_1" begin="14800" number="1" type="emergency_car" route="dist_circ_right" departLane="best"/>
+    <flow id="em_11_2" begin="15400" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_11_3" begin="16000" number="1" type="emergency_car" route="dist_donore_south" departLane="best"/>
+    <flow id="em_11_4" begin="16600" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_11_5" begin="17200" number="1" type="emergency_car" route="dist_donore_north" departLane="best"/>
+    <flow id="em_11_6" begin="17800" number="1" type="emergency_car" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f12_clan_up" begin="18000" end="21600" vehsPerHour="135" type="car" route="dist_clan_up" departLane="best"/>
+    <flow id="f12_clan_down" begin="18000" end="21600" vehsPerHour="134" type="car" route="dist_clan_down" departLane="best"/>
+    <flow id="f12_donore_north" begin="18000" end="21600" vehsPerHour="73" type="car" route="dist_donore_north" departLane="best"/>
+    <flow id="f12_donore_south" begin="18000" end="21600" vehsPerHour="73" type="car" route="dist_donore_south" departLane="best"/>
+    <flow id="f12_circ_left" begin="18000" end="21600" vehsPerHour="194" type="car" route="dist_circ_left" departLane="best"/>
+    <flow id="f12_circ_right" begin="18000" end="21600" vehsPerHour="195" type="car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="em_12_1" begin="18400" number="1" type="emergency_car" route="dist_donore_north" departLane="best"/>
+    <flow id="em_12_2" begin="18900" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_12_3" begin="19500" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_12_4" begin="20100" number="1" type="emergency_car" route="dist_circ_right" departLane="best"/>
+    <flow id="em_12_5" begin="20700" number="1" type="emergency_car" route="dist_donore_south" departLane="best"/>
+    <flow id="em_12_6" begin="21300" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_12_7" begin="21550" number="1" type="emergency_car" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f13_clan_up" begin="21600" end="25200" vehsPerHour="124" type="car" route="dist_clan_up" departLane="best"/>
+    <flow id="f13_clan_down" begin="21600" end="25200" vehsPerHour="124" type="car" route="dist_clan_down" departLane="best"/>
+    <flow id="f13_donore_north" begin="21600" end="25200" vehsPerHour="74" type="car" route="dist_donore_north" departLane="best"/>
+    <flow id="f13_donore_south" begin="21600" end="25200" vehsPerHour="73" type="car" route="dist_donore_south" departLane="best"/>
+    <flow id="f13_circ_left" begin="21600" end="25200" vehsPerHour="221" type="car" route="dist_circ_left" departLane="best"/>
+    <flow id="f13_circ_right" begin="21600" end="25200" vehsPerHour="197" type="car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="em_13_1" begin="21900" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_13_2" begin="22400" number="1" type="emergency_car" route="dist_donore_south" departLane="best"/>
+    <flow id="em_13_3" begin="23000" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_13_4" begin="23600" number="1" type="emergency_car" route="dist_circ_left" departLane="best"/>
+    <flow id="em_13_5" begin="24200" number="1" type="emergency_car" route="dist_donore_north" departLane="best"/>
+    <flow id="em_13_6" begin="24800" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f14_clan_up" begin="25200" end="28800" vehsPerHour="135" type="car" route="dist_clan_up" departLane="best"/>
+    <flow id="f14_clan_down" begin="25200" end="28800" vehsPerHour="134" type="car" route="dist_clan_down" departLane="best"/>
+    <flow id="f14_donore_north" begin="25200" end="28800" vehsPerHour="76" type="car" route="dist_donore_north" departLane="best"/>
+    <flow id="f14_donore_south" begin="25200" end="28800" vehsPerHour="75" type="car" route="dist_donore_south" departLane="best"/>
+    <flow id="f14_circ_left" begin="25200" end="28800" vehsPerHour="228" type="car" route="dist_circ_left" departLane="best"/>
+    <flow id="f14_circ_right" begin="25200" end="28800" vehsPerHour="210" type="car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="em_14_1" begin="25600" number="1" type="emergency_car" route="dist_donore_north" departLane="best"/>
+    <flow id="em_14_2" begin="26200" number="1" type="emergency_car" route="dist_circ_left" departLane="best"/>
+    <flow id="em_14_3" begin="26800" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_14_4" begin="27400" number="1" type="emergency_car" route="dist_donore_south" departLane="best"/>
+    <flow id="em_14_5" begin="28000" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_14_6" begin="28600" number="1" type="emergency_car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="f15_clan_up" begin="28800" end="32400" vehsPerHour="130" type="car" route="dist_clan_up" departLane="best"/>
+    <flow id="f15_clan_down" begin="28800" end="32400" vehsPerHour="129" type="car" route="dist_clan_down" departLane="best"/>
+    <flow id="f15_donore_north" begin="28800" end="32400" vehsPerHour="69" type="car" route="dist_donore_north" departLane="best"/>
+    <flow id="f15_donore_south" begin="28800" end="32400" vehsPerHour="69" type="car" route="dist_donore_south" departLane="best"/>
+    <flow id="f15_circ_left" begin="28800" end="32400" vehsPerHour="244" type="car" route="dist_circ_left" departLane="best"/>
+    <flow id="f15_circ_right" begin="28800" end="32400" vehsPerHour="198" type="car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="em_15_1" begin="29200" number="1" type="emergency_car" route="dist_donore_south" departLane="best"/>
+    <flow id="em_15_2" begin="29600" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_15_3" begin="30100" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_15_4" begin="30800" number="1" type="emergency_car" route="dist_circ_left" departLane="best"/>
+    <flow id="em_15_5" begin="31400" number="1" type="emergency_car" route="dist_donore_north" departLane="best"/>
+    <flow id="em_15_6" begin="31900" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_15_7" begin="32200" number="1" type="emergency_car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="f16_clan_up" begin="32400" end="36000" vehsPerHour="128" type="car" route="dist_clan_up" departLane="best"/>
+    <flow id="f16_clan_down" begin="32400" end="36000" vehsPerHour="128" type="car" route="dist_clan_down" departLane="best"/>
+    <flow id="f16_donore_north" begin="32400" end="36000" vehsPerHour="65" type="car" route="dist_donore_north" departLane="best"/>
+    <flow id="f16_donore_south" begin="32400" end="36000" vehsPerHour="64" type="car" route="dist_donore_south" departLane="best"/>
+    <flow id="f16_circ_left" begin="32400" end="36000" vehsPerHour="217" type="car" route="dist_circ_left" departLane="best"/>
+    <flow id="f16_circ_right" begin="32400" end="36000" vehsPerHour="213" type="car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="em_16_1" begin="32800" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_16_2" begin="33300" number="1" type="emergency_car" route="dist_donore_north" departLane="best"/>
+    <flow id="em_16_3" begin="33900" number="1" type="emergency_car" route="dist_circ_right" departLane="best"/>
+    <flow id="em_16_4" begin="34500" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_16_5" begin="35100" number="1" type="emergency_car" route="dist_donore_south" departLane="best"/>
+    <flow id="em_16_6" begin="35600" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_16_7" begin="35900" number="1" type="emergency_car" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f17_clan_up" begin="36000" end="39600" vehsPerHour="134" type="car" route="dist_clan_up" departLane="best"/>
+    <flow id="f17_clan_down" begin="36000" end="39600" vehsPerHour="134" type="car" route="dist_clan_down" departLane="best"/>
+    <flow id="f17_donore_north" begin="36000" end="39600" vehsPerHour="65" type="car" route="dist_donore_north" departLane="best"/>
+    <flow id="f17_donore_south" begin="36000" end="39600" vehsPerHour="64" type="car" route="dist_donore_south" departLane="best"/>
+    <flow id="f17_circ_left" begin="36000" end="39600" vehsPerHour="129" type="car" route="dist_circ_left" departLane="best"/>
+    <flow id="f17_circ_right" begin="36000" end="39600" vehsPerHour="199" type="car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="em_17_1" begin="36500" number="1" type="emergency_car" route="dist_donore_south" departLane="best"/>
+    <flow id="em_17_2" begin="37100" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_17_3" begin="37600" number="1" type="emergency_car" route="dist_circ_left" departLane="best"/>
+    <flow id="em_17_4" begin="38200" number="1" type="emergency_car" route="dist_donore_north" departLane="best"/>
+    <flow id="em_17_5" begin="38800" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_17_6" begin="39400" number="1" type="emergency_car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="f18_clan_up" begin="39600" end="43200" vehsPerHour="130" type="car" route="dist_clan_up" departLane="best"/>
+    <flow id="f18_clan_down" begin="39600" end="43200" vehsPerHour="129" type="car" route="dist_clan_down" departLane="best"/>
+    <flow id="f18_donore_north" begin="39600" end="43200" vehsPerHour="74" type="car" route="dist_donore_north" departLane="best"/>
+    <flow id="f18_donore_south" begin="39600" end="43200" vehsPerHour="73" type="car" route="dist_donore_south" departLane="best"/>
+    <flow id="f18_circ_left" begin="39600" end="43200" vehsPerHour="157" type="car" route="dist_circ_left" departLane="best"/>
+    <flow id="f18_circ_right" begin="39600" end="43200" vehsPerHour="189" type="car" route="dist_circ_right" departLane="best"/>
+
+    <flow id="em_18_1" begin="40100" number="1" type="emergency_car" route="dist_circ_left" departLane="best"/>
+    <flow id="em_18_2" begin="40700" number="1" type="emergency_car" route="dist_clan_down" departLane="best"/>
+    <flow id="em_18_3" begin="41300" number="1" type="emergency_car" route="dist_donore_north" departLane="best"/>
+    <flow id="em_18_4" begin="41900" number="1" type="emergency_car" route="dist_clan_up" departLane="best"/>
+    <flow id="em_18_5" begin="42500" number="1" type="emergency_car" route="dist_donore_south" departLane="best"/>
+
+</routes>
