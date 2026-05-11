@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- Human-driven vehicles (HDV) -->
+    <vType id="simple_pkw" accel="2.6" decel="4.5" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="70.0" tau="1.0" color="1,0,0"/>
+
+    <!-- CAV: platoon leader (connected, acts like an intelligent precise vehicle) -->
+    <vType id="simple_pkw_as_platoon_leader" accel="3.0" decel="4.5" sigma="0.05" length="5.0" minGap="1.0" maxSpeed="70.0" tau="0.6" color="0,1,0"/>
+
+
+    <route id="r_0" edges="Donore_DownL2OL Circular_OL2OR Clanbrassil_OR2DownR"/>
+    <route id="r_1" edges="Donore_DownL2OL Circular_OL2OR Circular_OR2Right"/>
+    <route id="r_2" edges="Donore_DownL2OL Circular_OL2OR Clanbrassil_OR2UpR"/>
+    <route id="r_3" edges="Donore_DownL2OL Donore_OL2UpL"/>
+    <route id="r_4" edges="Donore_DownL2OL Circular_OL2Left"/>
+
+    <route id="r_5" edges="Clanbrassil_DownR2OR Circular_OR2Right"/>
+    <route id="r_6" edges="Clanbrassil_DownR2OR Clanbrassil_OR2UpR"/>
+    <route id="r_7" edges="Clanbrassil_DownR2OR Circular_OR2OL Donore_OL2UpL"/>
+    <route id="r_8" edges="Clanbrassil_DownR2OR Circular_OR2OL Circular_OL2Left"/>
+    <route id="r_9" edges="Clanbrassil_DownR2OR Circular_OR2OL Donore_OL2DownL"/>
+
+    <route id="r_10" edges="Circular_Right2OR Clanbrassil_OR2UpR"/>
+    <route id="r_11" edges="Circular_Right2OR Circular_OR2OL Donore_OL2UpL"/>
+    <route id="r_12" edges="Circular_Right2OR Circular_OR2OL Circular_OL2Left"/>
+    <route id="r_13" edges="Circular_Right2OR Circular_OR2OL Donore_OL2DownL"/>
+    <route id="r_14" edges="Circular_Right2OR Clanbrassil_OR2DownR"/>
+
+    <route id="r_15" edges="Clanbrassil_UpR2OR Circular_OR2OL Donore_OL2UpL"/>
+    <route id="r_16" edges="Clanbrassil_UpR2OR Circular_OR2OL Circular_OL2Left"/>
+    <route id="r_17" edges="Clanbrassil_UpR2OR Circular_OR2OL Donore_OL2DownL"/>
+    <route id="r_18" edges="Clanbrassil_UpR2OR Clanbrassil_OR2DownR"/>
+    <route id="r_19" edges="Clanbrassil_UpR2OR Circular_OR2Right"/>
+
+    <route id="r_20" edges="Donore_UpL2OL Circular_OL2OR Clanbrassil_OR2DownR"/>
+    <route id="r_21" edges="Donore_UpL2OL Circular_OL2OR Circular_OR2Right"/>
+    <route id="r_22" edges="Donore_UpL2OL Circular_OL2OR Clanbrassil_OR2UpR"/>
+    <route id="r_23" edges="Donore_UpL2OL Donore_OL2DownL"/>
+    <route id="r_24" edges="Donore_UpL2OL Circular_OL2Left"/>
+
+    <route id="r_25" edges="Circular_Left2OL Donore_OL2DownL"/>
+    <route id="r_26" edges="Circular_Left2OL Circular_OL2OR Clanbrassil_OR2DownR"/>
+    <route id="r_27" edges="Circular_Left2OL Circular_OL2OR Circular_OR2Right"/>
+    <route id="r_28" edges="Circular_Left2OL Circular_OL2OR Clanbrassil_OR2UpR"/>
+    <route id="r_29" edges="Circular_Left2OL Donore_OL2UpL"/>
+
+    <routeDistribution id="dist_donore_south" routes="r_0 r_1 r_2 r_3 r_4" probabilities="0.2 0.2 0.2 0.2 0.2"/>
+    <routeDistribution id="dist_donore_north" routes="r_20 r_21 r_22 r_23 r_24" probabilities="0.2 0.2 0.2 0.2 0.2"/>
+    <routeDistribution id="dist_clan_down" routes="r_5 r_6 r_7 r_8 r_9" probabilities="0.2 0.2 0.2 0.2 0.2"/>
+    <routeDistribution id="dist_circ_right" routes="r_10 r_11 r_12 r_13 r_14" probabilities="0.2 0.2 0.2 0.2 0.2"/>
+    <routeDistribution id="dist_clan_up" routes="r_15 r_16 r_17 r_18 r_19" probabilities="0.2 0.2 0.2 0.2 0.2"/>
+    <routeDistribution id="dist_circ_left" routes="r_25 r_26 r_27 r_28 r_29" probabilities="0.2 0.2 0.2 0.2 0.2"/>
+
+    <!-- f07 -->
+    <flow id="f07_clan_up_hdv" begin="0" end="3600" vehsPerHour="154" type="simple_pkw_as_platoon_leader" route="dist_clan_up" departLane="best"/>
+    <flow id="f07_clan_up_cav" begin="0" end="3600" vehsPerHour="51" type="simple_pkw" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f07_clan_down_hdv" begin="0" end="3600" vehsPerHour="154" type="simple_pkw_as_platoon_leader" route="dist_clan_down" departLane="best"/>
+    <flow id="f07_clan_down_cav" begin="0" end="3600" vehsPerHour="51" type="simple_pkw" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f07_donore_north_hdv" begin="0" end="3600" vehsPerHour="95" type="simple_pkw_as_platoon_leader" route="dist_donore_north" departLane="best"/>
+    <flow id="f07_donore_north_cav" begin="0" end="3600" vehsPerHour="31" type="simple_pkw" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f07_donore_south_hdv" begin="0" end="3600" vehsPerHour="94" type="simple_pkw_as_platoon_leader" route="dist_donore_south" departLane="best"/>
+    <flow id="f07_donore_south_cav" begin="0" end="3600" vehsPerHour="31" type="simple_pkw" route="dist_donore_south" departLane="best"/>
+
+    <flow id="f07_circ_left_hdv" begin="0" end="3600" vehsPerHour="128" type="simple_pkw_as_platoon_leader" route="dist_circ_left" departLane="best"/>
+    <flow id="f07_circ_left_cav" begin="0" end="3600" vehsPerHour="42" type="simple_pkw" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f07_circ_right_hdv" begin="0" end="3600" vehsPerHour="209" type="simple_pkw_as_platoon_leader" route="dist_circ_right" departLane="best"/>
+    <flow id="f07_circ_right_cav" begin="0" end="3600" vehsPerHour="69" type="simple_pkw" route="dist_circ_right" departLane="best"/>
+
+
+    <!-- f08 -->
+    <flow id="f08_clan_up_hdv" begin="3600" end="7200" vehsPerHour="139" type="simple_pkw_as_platoon_leader" route="dist_clan_up" departLane="best"/>
+    <flow id="f08_clan_up_cav" begin="3600" end="7200" vehsPerHour="46" type="simple_pkw" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f08_clan_down_hdv" begin="3600" end="7200" vehsPerHour="138" type="simple_pkw_as_platoon_leader" route="dist_clan_down" departLane="best"/>
+    <flow id="f08_clan_down_cav" begin="3600" end="7200" vehsPerHour="46" type="simple_pkw" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f08_donore_north_hdv" begin="3600" end="7200" vehsPerHour="105" type="simple_pkw_as_platoon_leader" route="dist_donore_north" departLane="best"/>
+    <flow id="f08_donore_north_cav" begin="3600" end="7200" vehsPerHour="35" type="simple_pkw" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f08_donore_south_hdv" begin="3600" end="7200" vehsPerHour="104" type="simple_pkw_as_platoon_leader" route="dist_donore_south" departLane="best"/>
+    <flow id="f08_donore_south_cav" begin="3600" end="7200" vehsPerHour="35" type="simple_pkw" route="dist_donore_south" departLane="best"/>
+
+    <flow id="f08_circ_left_hdv" begin="3600" end="7200" vehsPerHour="156" type="simple_pkw_as_platoon_leader" route="dist_circ_left" departLane="best"/>
+    <flow id="f08_circ_left_cav" begin="3600" end="7200" vehsPerHour="52" type="simple_pkw" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f08_circ_right_hdv" begin="3600" end="7200" vehsPerHour="200" type="simple_pkw_as_platoon_leader" route="dist_circ_right" departLane="best"/>
+    <flow id="f08_circ_right_cav" begin="3600" end="7200" vehsPerHour="67" type="simple_pkw" route="dist_circ_right" departLane="best"/>
+
+
+    <!-- f09 -->
+    <flow id="f09_clan_up_hdv" begin="7200" end="10800" vehsPerHour="162" type="simple_pkw_as_platoon_leader" route="dist_clan_up" departLane="best"/>
+    <flow id="f09_clan_up_cav" begin="7200" end="10800" vehsPerHour="54" type="simple_pkw" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f09_clan_down_hdv" begin="7200" end="10800" vehsPerHour="161" type="simple_pkw_as_platoon_leader" route="dist_clan_down" departLane="best"/>
+    <flow id="f09_clan_down_cav" begin="7200" end="10800" vehsPerHour="54" type="simple_pkw" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f09_donore_north_hdv" begin="7200" end="10800" vehsPerHour="87" type="simple_pkw_as_platoon_leader" route="dist_donore_north" departLane="best"/>
+    <flow id="f09_donore_north_cav" begin="7200" end="10800" vehsPerHour="29" type="simple_pkw" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f09_donore_south_hdv" begin="7200" end="10800" vehsPerHour="87" type="simple_pkw_as_platoon_leader" route="dist_donore_south" departLane="best"/>
+    <flow id="f09_donore_south_cav" begin="7200" end="10800" vehsPerHour="29" type="simple_pkw" route="dist_donore_south" departLane="best"/>
+
+    <flow id="f09_circ_left_hdv" begin="7200" end="10800" vehsPerHour="152" type="simple_pkw_as_platoon_leader" route="dist_circ_left" departLane="best"/>
+    <flow id="f09_circ_left_cav" begin="7200" end="10800" vehsPerHour="51" type="simple_pkw" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f09_circ_right_hdv" begin="7200" end="10800" vehsPerHour="191" type="simple_pkw_as_platoon_leader" route="dist_circ_right" departLane="best"/>
+    <flow id="f09_circ_right_cav" begin="7200" end="10800" vehsPerHour="63" type="simple_pkw" route="dist_circ_right" departLane="best"/>
+
+    <!-- f10 -->
+    <flow id="f10_clan_up_hdv" begin="10800" end="14400" vehsPerHour="132" type="simple_pkw_as_platoon_leader" route="dist_clan_up" departLane="best"/>
+    <flow id="f10_clan_up_cav" begin="10800" end="14400" vehsPerHour="44" type="simple_pkw" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f10_clan_down_hdv" begin="10800" end="14400" vehsPerHour="131" type="simple_pkw_as_platoon_leader" route="dist_clan_down" departLane="best"/>
+    <flow id="f10_clan_down_cav" begin="10800" end="14400" vehsPerHour="44" type="simple_pkw" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f10_donore_north_hdv" begin="10800" end="14400" vehsPerHour="62" type="simple_pkw_as_platoon_leader" route="dist_donore_north" departLane="best"/>
+    <flow id="f10_donore_north_cav" begin="10800" end="14400" vehsPerHour="20" type="simple_pkw" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f10_donore_south_hdv" begin="10800" end="14400" vehsPerHour="61" type="simple_pkw_as_platoon_leader" route="dist_donore_south" departLane="best"/>
+    <flow id="f10_donore_south_cav" begin="10800" end="14400" vehsPerHour="20" type="simple_pkw" route="dist_donore_south" departLane="best"/>
+
+    <flow id="f10_circ_left_hdv" begin="10800" end="14400" vehsPerHour="143" type="simple_pkw_as_platoon_leader" route="dist_circ_left" departLane="best"/>
+    <flow id="f10_circ_left_cav" begin="10800" end="14400" vehsPerHour="48" type="simple_pkw" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f10_circ_right_hdv" begin="10800" end="14400" vehsPerHour="183" type="simple_pkw_as_platoon_leader" route="dist_circ_right" departLane="best"/>
+    <flow id="f10_circ_right_cav" begin="10800" end="14400" vehsPerHour="61" type="simple_pkw" route="dist_circ_right" departLane="best"/>
+
+
+    <!-- f11 -->
+    <flow id="f11_clan_up_hdv" begin="14400" end="18000" vehsPerHour="116" type="simple_pkw_as_platoon_leader" route="dist_clan_up" departLane="best"/>
+    <flow id="f11_clan_up_cav" begin="14400" end="18000" vehsPerHour="39" type="simple_pkw" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f11_clan_down_hdv" begin="14400" end="18000" vehsPerHour="115" type="simple_pkw_as_platoon_leader" route="dist_clan_down" departLane="best"/>
+    <flow id="f11_clan_down_cav" begin="14400" end="18000" vehsPerHour="39" type="simple_pkw" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f11_donore_north_hdv" begin="14400" end="18000" vehsPerHour="58" type="simple_pkw_as_platoon_leader" route="dist_donore_north" departLane="best"/>
+    <flow id="f11_donore_north_cav" begin="14400" end="18000" vehsPerHour="19" type="simple_pkw" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f11_donore_south_hdv" begin="14400" end="18000" vehsPerHour="57" type="simple_pkw_as_platoon_leader" route="dist_donore_south" departLane="best"/>
+    <flow id="f11_donore_south_cav" begin="14400" end="18000" vehsPerHour="19" type="simple_pkw" route="dist_donore_south" departLane="best"/>
+
+    <flow id="f11_circ_left_hdv" begin="14400" end="18000" vehsPerHour="149" type="simple_pkw_as_platoon_leader" route="dist_circ_left" departLane="best"/>
+    <flow id="f11_circ_left_cav" begin="14400" end="18000" vehsPerHour="49" type="simple_pkw" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f11_circ_right_hdv" begin="14400" end="18000" vehsPerHour="160" type="simple_pkw_as_platoon_leader" route="dist_circ_right" departLane="best"/>
+    <flow id="f11_circ_right_cav" begin="14400" end="18000" vehsPerHour="54" type="simple_pkw" route="dist_circ_right" departLane="best"/>
+
+
+    <!-- f12 -->
+    <flow id="f12_clan_up_hdv" begin="18000" end="21600" vehsPerHour="101" type="simple_pkw_as_platoon_leader" route="dist_clan_up" departLane="best"/>
+    <flow id="f12_clan_up_cav" begin="18000" end="21600" vehsPerHour="34" type="simple_pkw" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f12_clan_down_hdv" begin="18000" end="21600" vehsPerHour="100" type="simple_pkw_as_platoon_leader" route="dist_clan_down" departLane="best"/>
+    <flow id="f12_clan_down_cav" begin="18000" end="21600" vehsPerHour="34" type="simple_pkw" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f12_donore_north_hdv" begin="18000" end="21600" vehsPerHour="55" type="simple_pkw_as_platoon_leader" route="dist_donore_north" departLane="best"/>
+    <flow id="f12_donore_north_cav" begin="18000" end="21600" vehsPerHour="18" type="simple_pkw" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f12_donore_south_hdv" begin="18000" end="21600" vehsPerHour="55" type="simple_pkw_as_platoon_leader" route="dist_donore_south" departLane="best"/>
+    <flow id="f12_donore_south_cav" begin="18000" end="21600" vehsPerHour="18" type="simple_pkw" route="dist_donore_south" departLane="best"/>
+
+    <flow id="f12_circ_left_hdv" begin="18000" end="21600" vehsPerHour="146" type="simple_pkw_as_platoon_leader" route="dist_circ_left" departLane="best"/>
+    <flow id="f12_circ_left_cav" begin="18000" end="21600" vehsPerHour="48" type="simple_pkw" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f12_circ_right_hdv" begin="18000" end="21600" vehsPerHour="146" type="simple_pkw_as_platoon_leader" route="dist_circ_right" departLane="best"/>
+    <flow id="f12_circ_right_cav" begin="18000" end="21600" vehsPerHour="49" type="simple_pkw" route="dist_circ_right" departLane="best"/>
+
+    <!-- f13 -->
+    <flow id="f13_clan_up_hdv" begin="21600" end="25200" vehsPerHour="93" type="simple_pkw_as_platoon_leader" route="dist_clan_up" departLane="best"/>
+    <flow id="f13_clan_up_cav" begin="21600" end="25200" vehsPerHour="31" type="simple_pkw" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f13_clan_down_hdv" begin="21600" end="25200" vehsPerHour="93" type="simple_pkw_as_platoon_leader" route="dist_clan_down" departLane="best"/>
+    <flow id="f13_clan_down_cav" begin="21600" end="25200" vehsPerHour="31" type="simple_pkw" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f13_donore_north_hdv" begin="21600" end="25200" vehsPerHour="55" type="simple_pkw_as_platoon_leader" route="dist_donore_north" departLane="best"/>
+    <flow id="f13_donore_north_cav" begin="21600" end="25200" vehsPerHour="19" type="simple_pkw" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f13_donore_south_hdv" begin="21600" end="25200" vehsPerHour="55" type="simple_pkw_as_platoon_leader" route="dist_donore_south" departLane="best"/>
+    <flow id="f13_donore_south_cav" begin="21600" end="25200" vehsPerHour="18" type="simple_pkw" route="dist_donore_south" departLane="best"/>
+
+    <flow id="f13_circ_left_hdv" begin="21600" end="25200" vehsPerHour="166" type="simple_pkw_as_platoon_leader" route="dist_circ_left" departLane="best"/>
+    <flow id="f13_circ_left_cav" begin="21600" end="25200" vehsPerHour="55" type="simple_pkw" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f13_circ_right_hdv" begin="21600" end="25200" vehsPerHour="148" type="simple_pkw_as_platoon_leader" route="dist_circ_right" departLane="best"/>
+    <flow id="f13_circ_right_cav" begin="21600" end="25200" vehsPerHour="49" type="simple_pkw" route="dist_circ_right" departLane="best"/>
+
+
+    <!-- f14 -->
+    <flow id="f14_clan_up_hdv" begin="25200" end="28800" vehsPerHour="101" type="simple_pkw_as_platoon_leader" route="dist_clan_up" departLane="best"/>
+    <flow id="f14_clan_up_cav" begin="25200" end="28800" vehsPerHour="34" type="simple_pkw" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f14_clan_down_hdv" begin="25200" end="28800" vehsPerHour="100" type="simple_pkw_as_platoon_leader" route="dist_clan_down" departLane="best"/>
+    <flow id="f14_clan_down_cav" begin="25200" end="28800" vehsPerHour="34" type="simple_pkw" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f14_donore_north_hdv" begin="25200" end="28800" vehsPerHour="57" type="simple_pkw_as_platoon_leader" route="dist_donore_north" departLane="best"/>
+    <flow id="f14_donore_north_cav" begin="25200" end="28800" vehsPerHour="19" type="simple_pkw" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f14_donore_south_hdv" begin="25200" end="28800" vehsPerHour="56" type="simple_pkw_as_platoon_leader" route="dist_donore_south" departLane="best"/>
+    <flow id="f14_donore_south_cav" begin="25200" end="28800" vehsPerHour="19" type="simple_pkw" route="dist_donore_south" departLane="best"/>
+
+    <flow id="f14_circ_left_hdv" begin="25200" end="28800" vehsPerHour="171" type="simple_pkw_as_platoon_leader" route="dist_circ_left" departLane="best"/>
+    <flow id="f14_circ_left_cav" begin="25200" end="28800" vehsPerHour="57" type="simple_pkw" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f14_circ_right_hdv" begin="25200" end="28800" vehsPerHour="158" type="simple_pkw_as_platoon_leader" route="dist_circ_right" departLane="best"/>
+    <flow id="f14_circ_right_cav" begin="25200" end="28800" vehsPerHour="52" type="simple_pkw" route="dist_circ_right" departLane="best"/>
+
+
+    <!-- f15 -->
+    <flow id="f15_clan_up_hdv" begin="28800" end="32400" vehsPerHour="97" type="simple_pkw_as_platoon_leader" route="dist_clan_up" departLane="best"/>
+    <flow id="f15_clan_up_cav" begin="28800" end="32400" vehsPerHour="33" type="simple_pkw" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f15_clan_down_hdv" begin="28800" end="32400" vehsPerHour="97" type="simple_pkw_as_platoon_leader" route="dist_clan_down" departLane="best"/>
+    <flow id="f15_clan_down_cav" begin="28800" end="32400" vehsPerHour="32" type="simple_pkw" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f15_donore_north_hdv" begin="28800" end="32400" vehsPerHour="52" type="simple_pkw_as_platoon_leader" route="dist_donore_north" departLane="best"/>
+    <flow id="f15_donore_north_cav" begin="28800" end="32400" vehsPerHour="17" type="simple_pkw" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f15_donore_south_hdv" begin="28800" end="32400" vehsPerHour="52" type="simple_pkw_as_platoon_leader" route="dist_donore_south" departLane="best"/>
+    <flow id="f15_donore_south_cav" begin="28800" end="32400" vehsPerHour="17" type="simple_pkw" route="dist_donore_south" departLane="best"/>
+
+    <flow id="f15_circ_left_hdv" begin="28800" end="32400" vehsPerHour="183" type="simple_pkw_as_platoon_leader" route="dist_circ_left" departLane="best"/>
+    <flow id="f15_circ_left_cav" begin="28800" end="32400" vehsPerHour="61" type="simple_pkw" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f15_circ_right_hdv" begin="28800" end="32400" vehsPerHour="148" type="simple_pkw_as_platoon_leader" route="dist_circ_right" departLane="best"/>
+    <flow id="f15_circ_right_cav" begin="28800" end="32400" vehsPerHour="50" type="simple_pkw" route="dist_circ_right" departLane="best"/>
+
+    <!-- f16 -->
+    <flow id="f16_clan_up_hdv" begin="32400" end="36000" vehsPerHour="96" type="simple_pkw_as_platoon_leader" route="dist_clan_up" departLane="best"/>
+    <flow id="f16_clan_up_cav" begin="32400" end="36000" vehsPerHour="32" type="simple_pkw" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f16_clan_down_hdv" begin="32400" end="36000" vehsPerHour="96" type="simple_pkw_as_platoon_leader" route="dist_clan_down" departLane="best"/>
+    <flow id="f16_clan_down_cav" begin="32400" end="36000" vehsPerHour="32" type="simple_pkw" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f16_donore_north_hdv" begin="32400" end="36000" vehsPerHour="49" type="simple_pkw_as_platoon_leader" route="dist_donore_north" departLane="best"/>
+    <flow id="f16_donore_north_cav" begin="32400" end="36000" vehsPerHour="16" type="simple_pkw" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f16_donore_south_hdv" begin="32400" end="36000" vehsPerHour="48" type="simple_pkw_as_platoon_leader" route="dist_donore_south" departLane="best"/>
+    <flow id="f16_donore_south_cav" begin="32400" end="36000" vehsPerHour="16" type="simple_pkw" route="dist_donore_south" departLane="best"/>
+
+    <flow id="f16_circ_left_hdv" begin="32400" end="36000" vehsPerHour="163" type="simple_pkw_as_platoon_leader" route="dist_circ_left" departLane="best"/>
+    <flow id="f16_circ_left_cav" begin="32400" end="36000" vehsPerHour="54" type="simple_pkw" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f16_circ_right_hdv" begin="32400" end="36000" vehsPerHour="160" type="simple_pkw_as_platoon_leader" route="dist_circ_right" departLane="best"/>
+    <flow id="f16_circ_right_cav" begin="32400" end="36000" vehsPerHour="53" type="simple_pkw" route="dist_circ_right" departLane="best"/>
+
+
+    <!-- f17 -->
+    <flow id="f17_clan_up_hdv" begin="36000" end="39600" vehsPerHour="101" type="simple_pkw_as_platoon_leader" route="dist_clan_up" departLane="best"/>
+    <flow id="f17_clan_up_cav" begin="36000" end="39600" vehsPerHour="33" type="simple_pkw" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f17_clan_down_hdv" begin="36000" end="39600" vehsPerHour="101" type="simple_pkw_as_platoon_leader" route="dist_clan_down" departLane="best"/>
+    <flow id="f17_clan_down_cav" begin="36000" end="39600" vehsPerHour="33" type="simple_pkw" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f17_donore_north_hdv" begin="36000" end="39600" vehsPerHour="49" type="simple_pkw_as_platoon_leader" route="dist_donore_north" departLane="best"/>
+    <flow id="f17_donore_north_cav" begin="36000" end="39600" vehsPerHour="16" type="simple_pkw" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f17_donore_south_hdv" begin="36000" end="39600" vehsPerHour="48" type="simple_pkw_as_platoon_leader" route="dist_donore_south" departLane="best"/>
+    <flow id="f17_donore_south_cav" begin="36000" end="39600" vehsPerHour="16" type="simple_pkw" route="dist_donore_south" departLane="best"/>
+
+    <flow id="f17_circ_left_hdv" begin="36000" end="39600" vehsPerHour="97" type="simple_pkw_as_platoon_leader" route="dist_circ_left" departLane="best"/>
+    <flow id="f17_circ_left_cav" begin="36000" end="39600" vehsPerHour="32" type="simple_pkw" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f17_circ_right_hdv" begin="36000" end="39600" vehsPerHour="149" type="simple_pkw_as_platoon_leader" route="dist_circ_right" departLane="best"/>
+    <flow id="f17_circ_right_cav" begin="36000" end="39600" vehsPerHour="50" type="simple_pkw" route="dist_circ_right" departLane="best"/>
+
+
+    <!-- f18 -->
+    <flow id="f18_clan_up_hdv" begin="39600" end="43200" vehsPerHour="98" type="simple_pkw_as_platoon_leader" route="dist_clan_up" departLane="best"/>
+    <flow id="f18_clan_up_cav" begin="39600" end="43200" vehsPerHour="32" type="simple_pkw" route="dist_clan_up" departLane="best"/>
+
+    <flow id="f18_clan_down_hdv" begin="39600" end="43200" vehsPerHour="97" type="simple_pkw_as_platoon_leader" route="dist_clan_down" departLane="best"/>
+    <flow id="f18_clan_down_cav" begin="39600" end="43200" vehsPerHour="32" type="simple_pkw" route="dist_clan_down" departLane="best"/>
+
+    <flow id="f18_donore_north_hdv" begin="39600" end="43200" vehsPerHour="56" type="simple_pkw_as_platoon_leader" route="dist_donore_north" departLane="best"/>
+    <flow id="f18_donore_north_cav" begin="39600" end="43200" vehsPerHour="18" type="simple_pkw" route="dist_donore_north" departLane="best"/>
+
+    <flow id="f18_donore_south_hdv" begin="39600" end="43200" vehsPerHour="55" type="simple_pkw_as_platoon_leader" route="dist_donore_south" departLane="best"/>
+    <flow id="f18_donore_south_cav" begin="39600" end="43200" vehsPerHour="18" type="simple_pkw" route="dist_donore_south" departLane="best"/>
+
+    <flow id="f18_circ_left_hdv" begin="39600" end="43200" vehsPerHour="118" type="simple_pkw_as_platoon_leader" route="dist_circ_left" departLane="best"/>
+    <flow id="f18_circ_left_cav" begin="39600" end="43200" vehsPerHour="39" type="simple_pkw" route="dist_circ_left" departLane="best"/>
+
+    <flow id="f18_circ_right_hdv" begin="39600" end="43200" vehsPerHour="142" type="simple_pkw_as_platoon_leader" route="dist_circ_right" departLane="best"/>
+    <flow id="f18_circ_right_cav" begin="39600" end="43200" vehsPerHour="47" type="simple_pkw" route="dist_circ_right" departLane="best"/>
+
+</routes>
