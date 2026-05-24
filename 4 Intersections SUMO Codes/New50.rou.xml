@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-11-06 16:34:16 by Eclipse SUMO netedit Version 1.20.0
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+
+    <!-- Vehicle Types -->
+    <!-- Human-driven vehicles (HDV) -->
+    <vType id="simple_pkw" accel="2.6" decel="4.5" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="70.0" tau="1.0" color="1,0,0"/>
+
+    <!-- CAV: platoon leader (connected, acts like an intelligent precise vehicle) -->
+    <vType id="simple_pkw_as_platoon_leader" accel="3.0" decel="4.5" sigma="0.05" length="5.0" minGap="1.0" maxSpeed="70.0" tau="0.6" color="0,1,0"/>
+
+    <!-- CAV: platoon follower (very small gap, low stochasticity) -->
+    <vType id="simple_pkw_as_platoon_follower" accel="3.0" decel="4.5" sigma="0.01" length="5.0" minGap="0.5" maxSpeed="70.0" tau="0.3" color="0,0,1"/>
+
+    <!-- Routes -->
+    <route id="r_0" edges="Farahzadi_S Farahzadi_N2"/>
+    <route id="r_1" edges="Farahzadi_S Dadman_E2"/>
+    <route id="r_2" edges="Dadman_E Dadman_W2"/>
+    <route id="r_3" edges="Dadman_E Farahzadi_S2"/>
+    <route id="r_4" edges="Farahzadi_N Dadman_E2"/>
+    <route id="r_5" edges="Farahzadi_N Farahzadi_S2"/>
+    <route id="r_6" edges="Farahzadi_N Dadman_W2"/>
+    <route id="r_7" edges="Dadman_W Farahzadi_S2"/>
+    <route id="r_8" edges="Dadman_W Dadman_E2"/>
+    <route id="r_9" edges="Dadman_W Farahzadi_N2"/>
+    
+
+    <!-- Flows split 50/50 -->
+    <!-- ============================================ -->
+    <!-- Hour 1: 07:00 - 08:00 (begin=0, end=3600) -->
+    <!-- ============================================ -->
+    <!-- f1 (Detector 7): 116 -> 58 HDV + 58 CAV -->
+    <flow id="f1_1_HDV" begin="0.00" departLane="0" route="r_7" end="3600.00" vehsPerHour="58" type="simple_pkw"/>
+    <flow id="f1_1_CAV" begin="0.00" departLane="0" route="r_7" end="3600.00" vehsPerHour="58" type="simple_pkw_as_platoon_leader"/>
+    <!-- f2 (Detector 2): 91 -> 46 HDV + 45 CAV -->
+    <flow id="f2_1_HDV" begin="0.00" departLane="1" route="r_8" end="3600.00" vehsPerHour="46" type="simple_pkw"/>
+    <flow id="f2_1_CAV" begin="0.00" departLane="1" route="r_8" end="3600.00" vehsPerHour="45" type="simple_pkw_as_platoon_leader"/>
+    <!-- f3 (Detector 3): 122 -> 61 HDV + 61 CAV -->
+    <flow id="f3_1_HDV" begin="0.00" departLane="2" route="r_8" end="3600.00" vehsPerHour="61" type="simple_pkw"/>
+    <flow id="f3_1_CAV" begin="0.00" departLane="2" route="r_8" end="3600.00" vehsPerHour="61" type="simple_pkw_as_platoon_leader"/>
+    <!-- f4 (Detector 4): 97 -> 49 HDV + 48 CAV -->
+    <flow id="f4_1_HDV" begin="0.00" departLane="3" arrivalLane="0" route="r_9" end="3600.00" vehsPerHour="49" type="simple_pkw"/>
+    <flow id="f4_1_CAV" begin="0.00" departLane="3" arrivalLane="0" route="r_9" end="3600.00" vehsPerHour="48" type="simple_pkw_as_platoon_leader"/>
+    <!-- f5 (Detector 5): 55 -> 28 HDV + 27 CAV -->
+    <flow id="f5_1_HDV" begin="0.00" departLane="0" route="r_6" end="3600.00" vehsPerHour="28" type="simple_pkw"/>
+    <flow id="f5_1_CAV" begin="0.00" departLane="0" route="r_6" end="3600.00" vehsPerHour="27" type="simple_pkw_as_platoon_leader"/>
+    <!-- f6 (Detector 6): 144 -> 72 HDV + 72 CAV -->
+    <flow id="f6_1_HDV" begin="0.00" departLane="1" route="r_5" end="3600.00" vehsPerHour="72" type="simple_pkw"/>
+    <flow id="f6_1_CAV" begin="0.00" departLane="1" route="r_5" end="3600.00" vehsPerHour="72" type="simple_pkw_as_platoon_leader"/>
+    <!-- f7 (Detector 7): 116 -> 58 HDV + 58 CAV -->
+    <flow id="f7_1_HDV" begin="0.00" departLane="2" route="r_4" end="3600.00" vehsPerHour="58" type="simple_pkw"/>
+    <flow id="f7_1_CAV" begin="0.00" departLane="2" route="r_4" end="3600.00" vehsPerHour="58" type="simple_pkw_as_platoon_leader"/>
+    <!-- f9 (Detector 9): 97 -> 49 HDV + 48 CAV -->
+    <flow id="f9_1_HDV" begin="0.00" departLane="0" route="r_2" end="3600.00" vehsPerHour="49" type="simple_pkw"/>
+    <flow id="f9_1_CAV" begin="0.00" departLane="0" route="r_2" end="3600.00" vehsPerHour="48" type="simple_pkw_as_platoon_leader"/>
+    <!-- f10 (Detector 10): 109 -> 55 HDV + 54 CAV -->
+    <flow id="f10_1_HDV" begin="0.00" departLane="1" route="r_2" end="3600.00" vehsPerHour="55" type="simple_pkw"/>
+    <flow id="f10_1_CAV" begin="0.00" departLane="1" route="r_2" end="3600.00" vehsPerHour="54" type="simple_pkw_as_platoon_leader"/>
+    <!-- f11 (Detector 11): 63 -> 32 HDV + 31 CAV -->
+    <flow id="f11_1_HDV" begin="0.00" departLane="2" route="r_3" end="3600.00" vehsPerHour="32" type="simple_pkw"/>
+    <flow id="f11_1_CAV" begin="0.00" departLane="2" route="r_3" end="3600.00" vehsPerHour="31" type="simple_pkw_as_platoon_leader"/>
+    <!-- f12 (Detector 12): 88 -> 44 HDV + 44 CAV -->
+    <flow id="f12_1_HDV" begin="0.00" departLane="0" arrivalLane="0" route="r_1" end="3600.00" vehsPerHour="44" type="simple_pkw"/>
+    <flow id="f12_1_CAV" begin="0.00" departLane="0" arrivalLane="0" route="r_1" end="3600.00" vehsPerHour="44" type="simple_pkw_as_platoon_leader"/>
+    <!-- f13 (Detector 13): 121 -> 61 HDV + 60 CAV -->
+    <flow id="f13_1_HDV" begin="0.00" departLane="1" route="r_0" end="3600.00" vehsPerHour="61" type="simple_pkw"/>
+    <flow id="f13_1_CAV" begin="0.00" departLane="1" route="r_0" end="3600.00" vehsPerHour="60" type="simple_pkw_as_platoon_leader"/>
+    <!-- f14 (Detector 14): 101 -> 51 HDV + 50 CAV -->
+    <flow id="f14_1_HDV" begin="0.00" departLane="2" route="r_0" end="3600.00" vehsPerHour="51" type="simple_pkw"/>
+    <flow id="f14_1_CAV" begin="0.00" departLane="2" route="r_0" end="3600.00" vehsPerHour="50" type="simple_pkw_as_platoon_leader"/>
+
+    <!-- ============================================ -->
+    <!-- Hour 2: 08:00 - 09:00 (begin=3600, end=7200) -->
+    <!-- ============================================ -->
+    <!-- f1: 124 -> 62 HDV + 62 CAV -->
+    <flow id="f1_2_HDV" begin="3600.00" departLane="0" route="r_7" end="7200.00" vehsPerHour="62" type="simple_pkw"/>
+    <flow id="f1_2_CAV" begin="3600.00" departLane="0" route="r_7" end="7200.00" vehsPerHour="62" type="simple_pkw_as_platoon_leader"/>
+    <!-- f2: 95 -> 48 HDV + 47 CAV -->
+    <flow id="f2_2_HDV" begin="3600.00" departLane="1" route="r_8" end="7200.00" vehsPerHour="48" type="simple_pkw"/>
+    <flow id="f2_2_CAV" begin="3600.00" departLane="1" route="r_8" end="7200.00" vehsPerHour="47" type="simple_pkw_as_platoon_leader"/>
+    <!-- f3: 127 -> 64 HDV + 63 CAV -->
+    <flow id="f3_2_HDV" begin="3600.00" departLane="2" route="r_8" end="7200.00" vehsPerHour="64" type="simple_pkw"/>
+    <flow id="f3_2_CAV" begin="3600.00" departLane="2" route="r_8" end="7200.00" vehsPerHour="63" type="simple_pkw_as_platoon_leader"/>
+    <!-- f4: 104 -> 52 HDV + 52 CAV -->
+    <flow id="f4_2_HDV" begin="3600.00" departLane="3" arrivalLane="0" route="r_9" end="7200.00" vehsPerHour="52" type="simple_pkw"/>
+    <flow id="f4_2_CAV" begin="3600.00" departLane="3" arrivalLane="0" route="r_9" end="7200.00" vehsPerHour="52" type="simple_pkw_as_platoon_leader"/>
+    <!-- f5: 81 -> 41 HDV + 40 CAV -->
+    <flow id="f5_2_HDV" begin="3600.00" departLane="0" route="r_6" end="7200.00" vehsPerHour="41" type="simple_pkw"/>
+    <flow id="f5_2_CAV" begin="3600.00" departLane="0" route="r_6" end="7200.00" vehsPerHour="40" type="simple_pkw_as_platoon_leader"/>
+    <!-- f6: 156 -> 78 HDV + 78 CAV -->
+    <flow id="f6_2_HDV" begin="3600.00" departLane="1" route="r_5" end="7200.00" vehsPerHour="78" type="simple_pkw"/>
+    <flow id="f6_2_CAV" begin="3600.00" departLane="1" route="r_5" end="7200.00" vehsPerHour="78" type="simple_pkw_as_platoon_leader"/>
+    <!-- f7: 124 -> 62 HDV + 62 CAV -->
+    <flow id="f7_2_HDV" begin="3600.00" departLane="2" route="r_4" end="7200.00" vehsPerHour="62" type="simple_pkw"/>
+    <flow id="f7_2_CAV" begin="3600.00" departLane="2" route="r_4" end="7200.00" vehsPerHour="62" type="simple_pkw_as_platoon_leader"/>
+    <!-- f9: 123 -> 62 HDV + 61 CAV -->
+    <flow id="f9_2_HDV" begin="3600.00" departLane="0" route="r_2" end="7200.00" vehsPerHour="62" type="simple_pkw"/>
+    <flow id="f9_2_CAV" begin="3600.00" departLane="0" route="r_2" end="7200.00" vehsPerHour="61" type="simple_pkw_as_platoon_leader"/>
+    <!-- f10: 111 -> 56 HDV + 55 CAV -->
+    <flow id="f10_2_HDV" begin="3600.00" departLane="1" route="r_2" end="7200.00" vehsPerHour="56" type="simple_pkw"/>
+    <flow id="f10_2_CAV" begin="3600.00" departLane="1" route="r_2" end="7200.00" vehsPerHour="55" type="simple_pkw_as_platoon_leader"/>
+    <!-- f11: 82 -> 41 HDV + 41 CAV -->
+    <flow id="f11_2_HDV" begin="3600.00" departLane="2" route="r_3" end="7200.00" vehsPerHour="41" type="simple_pkw"/>
+    <flow id="f11_2_CAV" begin="3600.00" departLane="2" route="r_3" end="7200.00" vehsPerHour="41" type="simple_pkw_as_platoon_leader"/>
+    <!-- f12: 101 -> 51 HDV + 50 CAV -->
+    <flow id="f12_2_HDV" begin="3600.00" departLane="0" arrivalLane="0" route="r_1" end="7200.00" vehsPerHour="51" type="simple_pkw"/>
+    <flow id="f12_2_CAV" begin="3600.00" departLane="0" arrivalLane="0" route="r_1" end="7200.00" vehsPerHour="50" type="simple_pkw_as_platoon_leader"/>
+    <!-- f13: 137 -> 69 HDV + 68 CAV -->
+    <flow id="f13_2_HDV" begin="3600.00" departLane="1" route="r_0" end="7200.00" vehsPerHour="69" type="simple_pkw"/>
+    <flow id="f13_2_CAV" begin="3600.00" departLane="1" route="r_0" end="7200.00" vehsPerHour="68" type="simple_pkw_as_platoon_leader"/>
+    <!-- f14: 108 -> 54 HDV + 54 CAV -->
+    <flow id="f14_2_HDV" begin="3600.00" departLane="2" route="r_0" end="7200.00" vehsPerHour="54" type="simple_pkw"/>
+    <flow id="f14_2_CAV" begin="3600.00" departLane="2" route="r_0" end="7200.00" vehsPerHour="54" type="simple_pkw_as_platoon_leader"/>
+
+    <!-- ============================================ -->
+    <!-- Hour 3: 09:00 - 10:00 (begin=7200, end=10800) -->
+    <!-- ============================================ -->
+    <!-- f1: 191 -> 96 HDV + 95 CAV -->
+    <flow id="f1_3_HDV" begin="7200.00" departLane="0" route="r_7" end="10800.00" vehsPerHour="96" type="simple_pkw"/>
+    <flow id="f1_3_CAV" begin="7200.00" departLane="0" route="r_7" end="10800.00" vehsPerHour="95" type="simple_pkw_as_platoon_leader"/>
+    <!-- f2: 138 -> 69 HDV + 69 CAV -->
+    <flow id="f2_3_HDV" begin="7200.00" departLane="1" route="r_8" end="10800.00" vehsPerHour="69" type="simple_pkw"/>
+    <flow id="f2_3_CAV" begin="7200.00" departLane="1" route="r_8" end="10800.00" vehsPerHour="69" type="simple_pkw_as_platoon_leader"/>
+    <!-- f3: 159 -> 80 HDV + 79 CAV -->
+    <flow id="f3_3_HDV" begin="7200.00" departLane="2" route="r_8" end="10800.00" vehsPerHour="80" type="simple_pkw"/>
+    <flow id="f3_3_CAV" begin="7200.00" departLane="2" route="r_8" end="10800.00" vehsPerHour="79" type="simple_pkw_as_platoon_leader"/>
+    <!-- f4: 138 -> 69 HDV + 69 CAV -->
+    <flow id="f4_3_HDV" begin="7200.00" departLane="3" arrivalLane="0" route="r_9" end="10800.00" vehsPerHour="69" type="simple_pkw"/>
+    <flow id="f4_3_CAV" begin="7200.00" departLane="3" arrivalLane="0" route="r_9" end="10800.00" vehsPerHour="69" type="simple_pkw_as_platoon_leader"/>
+    <!-- f5: 117 -> 59 HDV + 58 CAV -->
+    <flow id="f5_3_HDV" begin="7200.00" departLane="0" route="r_6" end="10800.00" vehsPerHour="59" type="simple_pkw"/>
+    <flow id="f5_3_CAV" begin="7200.00" departLane="0" route="r_6" end="10800.00" vehsPerHour="58" type="simple_pkw_as_platoon_leader"/>
+    <!-- f6: 176 -> 88 HDV + 88 CAV -->
+    <flow id="f6_3_HDV" begin="7200.00" departLane="1" route="r_5" end="10800.00" vehsPerHour="88" type="simple_pkw"/>
+    <flow id="f6_3_CAV" begin="7200.00" departLane="1" route="r_5" end="10800.00" vehsPerHour="88" type="simple_pkw_as_platoon_leader"/>
+    <!-- f7: 191 -> 96 HDV + 95 CAV -->
+    <flow id="f7_3_HDV" begin="7200.00" departLane="2" route="r_4" end="10800.00" vehsPerHour="96" type="simple_pkw"/>
+    <flow id="f7_3_CAV" begin="7200.00" departLane="2" route="r_4" end="10800.00" vehsPerHour="95" type="simple_pkw_as_platoon_leader"/>
+    <!-- f9: 168 -> 84 HDV + 84 CAV -->
+    <flow id="f9_3_HDV" begin="7200.00" departLane="0" route="r_2" end="10800.00" vehsPerHour="84" type="simple_pkw"/>
+    <flow id="f9_3_CAV" begin="7200.00" departLane="0" route="r_2" end="10800.00" vehsPerHour="84" type="simple_pkw_as_platoon_leader"/>
+    <!-- f10: 155 -> 78 HDV + 77 CAV -->
+    <flow id="f10_3_HDV" begin="7200.00" departLane="1" route="r_2" end="10800.00" vehsPerHour="78" type="simple_pkw"/>
+    <flow id="f10_3_CAV" begin="7200.00" departLane="1" route="r_2" end="10800.00" vehsPerHour="77" type="simple_pkw_as_platoon_leader"/>
+    <!-- f11: 108 -> 54 HDV + 54 CAV -->
+    <flow id="f11_3_HDV" begin="7200.00" departLane="2" route="r_3" end="10800.00" vehsPerHour="54" type="simple_pkw"/>
+    <flow id="f11_3_CAV" begin="7200.00" departLane="2" route="r_3" end="10800.00" vehsPerHour="54" type="simple_pkw_as_platoon_leader"/>
+    <!-- f12: 122 -> 61 HDV + 61 CAV -->
+    <flow id="f12_3_HDV" begin="7200.00" departLane="0" arrivalLane="0" route="r_1" end="10800.00" vehsPerHour="61" type="simple_pkw"/>
+    <flow id="f12_3_CAV" begin="7200.00" departLane="0" arrivalLane="0" route="r_1" end="10800.00" vehsPerHour="61" type="simple_pkw_as_platoon_leader"/>
+    <!-- f13: 166 -> 83 HDV + 83 CAV -->
+    <flow id="f13_3_HDV" begin="7200.00" departLane="1" route="r_0" end="10800.00" vehsPerHour="83" type="simple_pkw"/>
+    <flow id="f13_3_CAV" begin="7200.00" departLane="1" route="r_0" end="10800.00" vehsPerHour="83" type="simple_pkw_as_platoon_leader"/>
+    <!-- f14: 147 -> 74 HDV + 73 CAV -->
+    <flow id="f14_3_HDV" begin="7200.00" departLane="2" route="r_0" end="10800.00" vehsPerHour="74" type="simple_pkw"/>
+    <flow id="f14_3_CAV" begin="7200.00" departLane="2" route="r_0" end="10800.00" vehsPerHour="73" type="simple_pkw_as_platoon_leader"/>
+
+    <!-- ============================================ -->
+    <!-- Hour 4: 10:00 - 11:00 (begin=10800, end=14400) -->
+    <!-- ============================================ -->
+    <!-- f1: 193 -> 97 HDV + 96 CAV -->
+    <flow id="f1_4_HDV" begin="10800.00" departLane="0" route="r_7" end="14400.00" vehsPerHour="97" type="simple_pkw"/>
+    <flow id="f1_4_CAV" begin="10800.00" departLane="0" route="r_7" end="14400.00" vehsPerHour="96" type="simple_pkw_as_platoon_leader"/>
+    <!-- f2: 148 -> 74 HDV + 74 CAV -->
+    <flow id="f2_4_HDV" begin="10800.00" departLane="1" route="r_8" end="14400.00" vehsPerHour="74" type="simple_pkw"/>
+    <flow id="f2_4_CAV" begin="10800.00" departLane="1" route="r_8" end="14400.00" vehsPerHour="74" type="simple_pkw_as_platoon_leader"/>
+    <!-- f3: 179 -> 90 HDV + 89 CAV -->
+    <flow id="f3_4_HDV" begin="10800.00" departLane="2" route="r_8" end="14400.00" vehsPerHour="90" type="simple_pkw"/>
+    <flow id="f3_4_CAV" begin="10800.00" departLane="2" route="r_8" end="14400.00" vehsPerHour="89" type="simple_pkw_as_platoon_leader"/>
+    <!-- f4: 164 -> 82 HDV + 82 CAV -->
+    <flow id="f4_4_HDV" begin="10800.00" departLane="3" arrivalLane="0" route="r_9" end="14400.00" vehsPerHour="82" type="simple_pkw"/>
+    <flow id="f4_4_CAV" begin="10800.00" departLane="3" arrivalLane="0" route="r_9" end="14400.00" vehsPerHour="82" type="simple_pkw_as_platoon_leader"/>
+    <!-- f5: 146 -> 73 HDV + 73 CAV -->
+    <flow id="f5_4_HDV" begin="10800.00" departLane="0" route="r_6" end="14400.00" vehsPerHour="73" type="simple_pkw"/>
+    <flow id="f5_4_CAV" begin="10800.00" departLane="0" route="r_6" end="14400.00" vehsPerHour="73" type="simple_pkw_as_platoon_leader"/>
+    <!-- f6: 209 -> 105 HDV + 104 CAV -->
+    <flow id="f6_4_HDV" begin="10800.00" departLane="1" route="r_5" end="14400.00" vehsPerHour="105" type="simple_pkw"/>
+    <flow id="f6_4_CAV" begin="10800.00" departLane="1" route="r_5" end="14400.00" vehsPerHour="104" type="simple_pkw_as_platoon_leader"/>
+    <!-- f7: 193 -> 97 HDV + 96 CAV -->
+    <flow id="f7_4_HDV" begin="10800.00" departLane="2" route="r_4" end="14400.00" vehsPerHour="97" type="simple_pkw"/>
+    <flow id="f7_4_CAV" begin="10800.00" departLane="2" route="r_4" end="14400.00" vehsPerHour="96" type="simple_pkw_as_platoon_leader"/>
+    <!-- f9: 202 -> 101 HDV + 101 CAV -->
+    <flow id="f9_4_HDV" begin="10800.00" departLane="0" route="r_2" end="14400.00" vehsPerHour="101" type="simple_pkw"/>
+    <flow id="f9_4_CAV" begin="10800.00" departLane="0" route="r_2" end="14400.00" vehsPerHour="101" type="simple_pkw_as_platoon_leader"/>
+    <!-- f10: 204 -> 102 HDV + 102 CAV -->
+    <flow id="f10_4_HDV" begin="10800.00" departLane="1" route="r_2" end="14400.00" vehsPerHour="102" type="simple_pkw"/>
+    <flow id="f10_4_CAV" begin="10800.00" departLane="1" route="r_2" end="14400.00" vehsPerHour="102" type="simple_pkw_as_platoon_leader"/>
+    <!-- f11: 147 -> 74 HDV + 73 CAV -->
+    <flow id="f11_4_HDV" begin="10800.00" departLane="2" route="r_3" end="14400.00" vehsPerHour="74" type="simple_pkw"/>
+    <flow id="f11_4_CAV" begin="10800.00" departLane="2" route="r_3" end="14400.00" vehsPerHour="73" type="simple_pkw_as_platoon_leader"/>
+    <!-- f12: 145 -> 73 HDV + 72 CAV -->
+    <flow id="f12_4_HDV" begin="10800.00" departLane="0" arrivalLane="0" route="r_1" end="14400.00" vehsPerHour="73" type="simple_pkw"/>
+    <flow id="f12_4_CAV" begin="10800.00" departLane="0" arrivalLane="0" route="r_1" end="14400.00" vehsPerHour="72" type="simple_pkw_as_platoon_leader"/>
+    <!-- f13: 155 -> 78 HDV + 77 CAV -->
+    <flow id="f13_4_HDV" begin="10800.00" departLane="1" route="r_0" end="14400.00" vehsPerHour="78" type="simple_pkw"/>
+    <flow id="f13_4_CAV" begin="10800.00" departLane="1" route="r_0" end="14400.00" vehsPerHour="77" type="simple_pkw_as_platoon_leader"/>
+    <!-- f14: 161 -> 81 HDV + 80 CAV -->
+    <flow id="f14_4_HDV" begin="10800.00" departLane="2" route="r_0" end="14400.00" vehsPerHour="81" type="simple_pkw"/>
+    <flow id="f14_4_CAV" begin="10800.00" departLane="2" route="r_0" end="14400.00" vehsPerHour="80" type="simple_pkw_as_platoon_leader"/>
+
+    <!-- ============================================ -->
+    <!-- Hour 5: 11:00 - 12:00 (begin=14400, end=18000) -->
+    <!-- ============================================ -->
+    <!-- f1: 235 -> 118 HDV + 117 CAV -->
+    <flow id="f1_5_HDV" begin="14400.00" departLane="0" route="r_7" end="18000.00" vehsPerHour="118" type="simple_pkw"/>
+    <flow id="f1_5_CAV" begin="14400.00" departLane="0" route="r_7" end="18000.00" vehsPerHour="117" type="simple_pkw_as_platoon_leader"/>
+    <!-- f2: 157 -> 79 HDV + 78 CAV -->
+    <flow id="f2_5_HDV" begin="14400.00" departLane="1" route="r_8" end="18000.00" vehsPerHour="79" type="simple_pkw"/>
+    <flow id="f2_5_CAV" begin="14400.00" departLane="1" route="r_8" end="18000.00" vehsPerHour="78" type="simple_pkw_as_platoon_leader"/>
+    <!-- f3: 201 -> 101 HDV + 100 CAV -->
+    <flow id="f3_5_HDV" begin="14400.00" departLane="2" route="r_8" end="18000.00" vehsPerHour="101" type="simple_pkw"/>
+    <flow id="f3_5_CAV" begin="14400.00" departLane="2" route="r_8" end="18000.00" vehsPerHour="100" type="simple_pkw_as_platoon_leader"/>
+    <!-- f4: 187 -> 94 HDV + 93 CAV -->
+    <flow id="f4_5_HDV" begin="14400.00" departLane="3" arrivalLane="0" route="r_9" end="18000.00" vehsPerHour="94" type="simple_pkw"/>
+    <flow id="f4_5_CAV" begin="14400.00" departLane="3" arrivalLane="0" route="r_9" end="18000.00" vehsPerHour="93" type="simple_pkw_as_platoon_leader"/>
+    <!-- f5: 165 -> 83 HDV + 82 CAV -->
+    <flow id="f5_5_HDV" begin="14400.00" departLane="0" route="r_6" end="18000.00" vehsPerHour="83" type="simple_pkw"/>
+    <flow id="f5_5_CAV" begin="14400.00" departLane="0" route="r_6" end="18000.00" vehsPerHour="82" type="simple_pkw_as_platoon_leader"/>
+    <!-- f6: 220 -> 110 HDV + 110 CAV -->
+    <flow id="f6_5_HDV" begin="14400.00" departLane="1" route="r_5" end="18000.00" vehsPerHour="110" type="simple_pkw"/>
+    <flow id="f6_5_CAV" begin="14400.00" departLane="1" route="r_5" end="18000.00" vehsPerHour="110" type="simple_pkw_as_platoon_leader"/>
+    <!-- f7: 235 -> 118 HDV + 117 CAV -->
+    <flow id="f7_5_HDV" begin="14400.00" departLane="2" route="r_4" end="18000.00" vehsPerHour="118" type="simple_pkw"/>
+    <flow id="f7_5_CAV" begin="14400.00" departLane="2" route="r_4" end="18000.00" vehsPerHour="117" type="simple_pkw_as_platoon_leader"/>
+    <!-- f9: 224 -> 112 HDV + 112 CAV -->
+    <flow id="f9_5_HDV" begin="14400.00" departLane="0" route="r_2" end="18000.00" vehsPerHour="112" type="simple_pkw"/>
+    <flow id="f9_5_CAV" begin="14400.00" departLane="0" route="r_2" end="18000.00" vehsPerHour="112" type="simple_pkw_as_platoon_leader"/>
+    <!-- f10: 203 -> 102 HDV + 101 CAV -->
+    <flow id="f10_5_HDV" begin="14400.00" departLane="1" route="r_2" end="18000.00" vehsPerHour="102" type="simple_pkw"/>
+    <flow id="f10_5_CAV" begin="14400.00" departLane="1" route="r_2" end="18000.00" vehsPerHour="101" type="simple_pkw_as_platoon_leader"/>
+    <!-- f11: 137 -> 69 HDV + 68 CAV -->
+    <flow id="f11_5_HDV" begin="14400.00" departLane="2" route="r_3" end="18000.00" vehsPerHour="69" type="simple_pkw"/>
+    <flow id="f11_5_CAV" begin="14400.00" departLane="2" route="r_3" end="18000.00" vehsPerHour="68" type="simple_pkw_as_platoon_leader"/>
+    <!-- f12: 145 -> 73 HDV + 72 CAV -->
+    <flow id="f12_5_HDV" begin="14400.00" departLane="0" arrivalLane="0" route="r_1" end="18000.00" vehsPerHour="73" type="simple_pkw"/>
+    <flow id="f12_5_CAV" begin="14400.00" departLane="0" arrivalLane="0" route="r_1" end="18000.00" vehsPerHour="72" type="simple_pkw_as_platoon_leader"/>
+    <!-- f13: 171 -> 86 HDV + 85 CAV -->
+    <flow id="f13_5_HDV" begin="14400.00" departLane="1" route="r_0" end="18000.00" vehsPerHour="86" type="simple_pkw"/>
+    <flow id="f13_5_CAV" begin="14400.00" departLane="1" route="r_0" end="18000.00" vehsPerHour="85" type="simple_pkw_as_platoon_leader"/>
+    <!-- f14: 170 -> 85 HDV + 85 CAV -->
+    <flow id="f14_5_HDV" begin="14400.00" departLane="2" route="r_0" end="18000.00" vehsPerHour="85" type="simple_pkw"/>
+    <flow id="f14_5_CAV" begin="14400.00" departLane="2" route="r_0" end="18000.00" vehsPerHour="85" type="simple_pkw_as_platoon_leader"/>
+
+    <!-- ============================================ -->
+    <!-- Hour 6: 12:00 - 13:00 (begin=18000, end=21600) -->
+    <!-- ============================================ -->
+    <!-- f1: 220 -> 110 HDV + 110 CAV -->
+    <flow id="f1_6_HDV" begin="18000.00" departLane="0" route="r_7" end="21600.00" vehsPerHour="110" type="simple_pkw"/>
+    <flow id="f1_6_CAV" begin="18000.00" departLane="0" route="r_7" end="21600.00" vehsPerHour="110" type="simple_pkw_as_platoon_leader"/>
+    <!-- f2: 157 -> 79 HDV + 78 CAV -->
+    <flow id="f2_6_HDV" begin="18000.00" departLane="1" route="r_8" end="21600.00" vehsPerHour="79" type="simple_pkw"/>
+    <flow id="f2_6_CAV" begin="18000.00" departLane="1" route="r_8" end="21600.00" vehsPerHour="78" type="simple_pkw_as_platoon_leader"/>
+    <!-- f3: 173 -> 87 HDV + 86 CAV -->
+    <flow id="f3_6_HDV" begin="18000.00" departLane="2" route="r_8" end="21600.00" vehsPerHour="87" type="simple_pkw"/>
+    <flow id="f3_6_CAV" begin="18000.00" departLane="2" route="r_8" end="21600.00" vehsPerHour="86" type="simple_pkw_as_platoon_leader"/>
+    <!-- f4: 159 -> 80 HDV + 79 CAV -->
+    <flow id="f4_6_HDV" begin="18000.00" departLane="3" arrivalLane="0" route="r_9" end="21600.00" vehsPerHour="80" type="simple_pkw"/>
+    <flow id="f4_6_CAV" begin="18000.00" departLane="3" arrivalLane="0" route="r_9" end="21600.00" vehsPerHour="79" type="simple_pkw_as_platoon_leader"/>
+    <!-- f5: 159 -> 80 HDV + 79 CAV -->
+    <flow id="f5_6_HDV" begin="18000.00" departLane="0" route="r_6" end="21600.00" vehsPerHour="80" type="simple_pkw"/>
+    <flow id="f5_6_CAV" begin="18000.00" departLane="0" route="r_6" end="21600.00" vehsPerHour="79" type="simple_pkw_as_platoon_leader"/>
+    <!-- f6: 226 -> 113 HDV + 113 CAV -->
+    <flow id="f6_6_HDV" begin="18000.00" departLane="1" route="r_5" end="21600.00" vehsPerHour="113" type="simple_pkw"/>
+    <flow id="f6_6_CAV" begin="18000.00" departLane="1" route="r_5" end="21600.00" vehsPerHour="113" type="simple_pkw_as_platoon_leader"/>
+    <!-- f7: 220 -> 110 HDV + 110 CAV -->
+    <flow id="f7_6_HDV" begin="18000.00" departLane="2" route="r_4" end="21600.00" vehsPerHour="110" type="simple_pkw"/>
+    <flow id="f7_6_CAV" begin="18000.00" departLane="2" route="r_4" end="21600.00" vehsPerHour="110" type="simple_pkw_as_platoon_leader"/>
+    <!-- f9: 198 -> 99 HDV + 99 CAV -->
+    <flow id="f9_6_HDV" begin="18000.00" departLane="0" route="r_2" end="21600.00" vehsPerHour="99" type="simple_pkw"/>
+    <flow id="f9_6_CAV" begin="18000.00" departLane="0" route="r_2" end="21600.00" vehsPerHour="99" type="simple_pkw_as_platoon_leader"/>
+    <!-- f10: 203 -> 102 HDV + 101 CAV -->
+    <flow id="f10_6_HDV" begin="18000.00" departLane="1" route="r_2" end="21600.00" vehsPerHour="102" type="simple_pkw"/>
+    <flow id="f10_6_CAV" begin="18000.00" departLane="1" route="r_2" end="21600.00" vehsPerHour="101" type="simple_pkw_as_platoon_leader"/>
+    <!-- f11: 156 -> 78 HDV + 78 CAV -->
+    <flow id="f11_6_HDV" begin="18000.00" departLane="2" route="r_3" end="21600.00" vehsPerHour="78" type="simple_pkw"/>
+    <flow id="f11_6_CAV" begin="18000.00" departLane="2" route="r_3" end="21600.00" vehsPerHour="78" type="simple_pkw_as_platoon_leader"/>
+    <!-- f12: 144 -> 72 HDV + 72 CAV -->
+    <flow id="f12_6_HDV" begin="18000.00" departLane="0" arrivalLane="0" route="r_1" end="21600.00" vehsPerHour="72" type="simple_pkw"/>
+    <flow id="f12_6_CAV" begin="18000.00" departLane="0" arrivalLane="0" route="r_1" end="21600.00" vehsPerHour="72" type="simple_pkw_as_platoon_leader"/>
+    <!-- f13: 175 -> 88 HDV + 87 CAV -->
+    <flow id="f13_6_HDV" begin="18000.00" departLane="1" route="r_0" end="21600.00" vehsPerHour="88" type="simple_pkw"/>
+    <flow id="f13_6_CAV" begin="18000.00" departLane="1" route="r_0" end="21600.00" vehsPerHour="87" type="simple_pkw_as_platoon_leader"/>
+    <!-- f14: 173 -> 87 HDV + 86 CAV -->
+    <flow id="f14_6_HDV" begin="18000.00" departLane="2" route="r_0" end="21600.00" vehsPerHour="87" type="simple_pkw"/>
+    <flow id="f14_6_CAV" begin="18000.00" departLane="2" route="r_0" end="21600.00" vehsPerHour="86" type="simple_pkw_as_platoon_leader"/>
+
+    <!-- ============================================ -->
+    <!-- Hour 7: 13:00 - 14:00 (begin=21600, end=25200) -->
+    <!-- ============================================ -->
+    <!-- f1: 178 -> 89 HDV + 89 CAV -->
+    <flow id="f1_7_HDV" begin="21600.00" departLane="0" route="r_7" end="25200.00" vehsPerHour="89" type="simple_pkw"/>
+    <flow id="f1_7_CAV" begin="21600.00" departLane="0" route="r_7" end="25200.00" vehsPerHour="89" type="simple_pkw_as_platoon_leader"/>
+    <!-- f2: 160 -> 80 HDV + 80 CAV -->
+    <flow id="f2_7_HDV" begin="21600.00" departLane="1" route="r_8" end="25200.00" vehsPerHour="80" type="simple_pkw"/>
+    <flow id="f2_7_CAV" begin="21600.00" departLane="1" route="r_8" end="25200.00" vehsPerHour="80" type="simple_pkw_as_platoon_leader"/>
+    <!-- f3: 190 -> 95 HDV + 95 CAV -->
+    <flow id="f3_7_HDV" begin="21600.00" departLane="2" route="r_8" end="25200.00" vehsPerHour="95" type="simple_pkw"/>
+    <flow id="f3_7_CAV" begin="21600.00" departLane="2" route="r_8" end="25200.00" vehsPerHour="95" type="simple_pkw_as_platoon_leader"/>
+    <!-- f4: 164 -> 82 HDV + 82 CAV -->
+    <flow id="f4_7_HDV" begin="21600.00" departLane="3" arrivalLane="0" route="r_9" end="25200.00" vehsPerHour="82" type="simple_pkw"/>
+    <flow id="f4_7_CAV" begin="21600.00" departLane="3" arrivalLane="0" route="r_9" end="25200.00" vehsPerHour="82" type="simple_pkw_as_platoon_leader"/>
+    <!-- f5: 148 -> 74 HDV + 74 CAV -->
+    <flow id="f5_7_HDV" begin="21600.00" departLane="0" route="r_6" end="25200.00" vehsPerHour="74" type="simple_pkw"/>
+    <flow id="f5_7_CAV" begin="21600.00" departLane="0" route="r_6" end="25200.00" vehsPerHour="74" type="simple_pkw_as_platoon_leader"/>
+    <!-- f6: 180 -> 90 HDV + 90 CAV -->
+    <flow id="f6_7_HDV" begin="21600.00" departLane="1" route="r_5" end="25200.00" vehsPerHour="90" type="simple_pkw"/>
+    <flow id="f6_7_CAV" begin="21600.00" departLane="1" route="r_5" end="25200.00" vehsPerHour="90" type="simple_pkw_as_platoon_leader"/>
+    <!-- f7: 178 -> 89 HDV + 89 CAV -->
+    <flow id="f7_7_HDV" begin="21600.00" departLane="2" route="r_4" end="25200.00" vehsPerHour="89" type="simple_pkw"/>
+    <flow id="f7_7_CAV" begin="21600.00" departLane="2" route="r_4" end="25200.00" vehsPerHour="89" type="simple_pkw_as_platoon_leader"/>
+    <!-- f9: 212 -> 106 HDV + 106 CAV -->
+    <flow id="f9_7_HDV" begin="21600.00" departLane="0" route="r_2" end="25200.00" vehsPerHour="106" type="simple_pkw"/>
+    <flow id="f9_7_CAV" begin="21600.00" departLane="0" route="r_2" end="25200.00" vehsPerHour="106" type="simple_pkw_as_platoon_leader"/>
+    <!-- f10: 206 -> 103 HDV + 103 CAV -->
+    <flow id="f10_7_HDV" begin="21600.00" departLane="1" route="r_2" end="25200.00" vehsPerHour="103" type="simple_pkw"/>
+    <flow id="f10_7_CAV" begin="21600.00" departLane="1" route="r_2" end="25200.00" vehsPerHour="103" type="simple_pkw_as_platoon_leader"/>
+    <!-- f11: 150 -> 75 HDV + 75 CAV -->
+    <flow id="f11_7_HDV" begin="21600.00" departLane="2" route="r_3" end="25200.00" vehsPerHour="75" type="simple_pkw"/>
+    <flow id="f11_7_CAV" begin="21600.00" departLane="2" route="r_3" end="25200.00" vehsPerHour="75" type="simple_pkw_as_platoon_leader"/>
+    <!-- f12: 151 -> 76 HDV + 75 CAV -->
+    <flow id="f12_7_HDV" begin="21600.00" departLane="0" arrivalLane="0" route="r_1" end="25200.00" vehsPerHour="76" type="simple_pkw"/>
+    <flow id="f12_7_CAV" begin="21600.00" departLane="0" arrivalLane="0" route="r_1" end="25200.00" vehsPerHour="75" type="simple_pkw_as_platoon_leader"/>
+    <!-- f13: 167 -> 84 HDV + 83 CAV -->
+    <flow id="f13_7_HDV" begin="21600.00" departLane="1" route="r_0" end="25200.00" vehsPerHour="84" type="simple_pkw"/>
+    <flow id="f13_7_CAV" begin="21600.00" departLane="1" route="r_0" end="25200.00" vehsPerHour="83" type="simple_pkw_as_platoon_leader"/>
+    <!-- f14: 177 -> 89 HDV + 88 CAV -->
+    <flow id="f14_7_HDV" begin="21600.00" departLane="2" route="r_0" end="25200.00" vehsPerHour="89" type="simple_pkw"/>
+    <flow id="f14_7_CAV" begin="21600.00" departLane="2" route="r_0" end="25200.00" vehsPerHour="88" type="simple_pkw_as_platoon_leader"/>
+
+    <!-- ============================================ -->
+    <!-- Hour 8: 14:00 - 15:00 (begin=25200, end=28800) -->
+    <!-- ============================================ -->
+    <!-- f1: 181 -> 91 HDV + 90 CAV -->
+    <flow id="f1_8_HDV" begin="25200.00" departLane="0" route="r_7" end="28800.00" vehsPerHour="91" type="simple_pkw"/>
+    <flow id="f1_8_CAV" begin="25200.00" departLane="0" route="r_7" end="28800.00" vehsPerHour="90" type="simple_pkw_as_platoon_leader"/>
+    <!-- f2: 145 -> 73 HDV + 72 CAV -->
+    <flow id="f2_8_HDV" begin="25200.00" departLane="1" route="r_8" end="28800.00" vehsPerHour="73" type="simple_pkw"/>
+    <flow id="f2_8_CAV" begin="25200.00" departLane="1" route="r_8" end="28800.00" vehsPerHour="72" type="simple_pkw_as_platoon_leader"/>
+    <!-- f3: 171 -> 86 HDV + 85 CAV -->
+    <flow id="f3_8_HDV" begin="25200.00" departLane="2" route="r_8" end="28800.00" vehsPerHour="86" type="simple_pkw"/>
+    <flow id="f3_8_CAV" begin="25200.00" departLane="2" route="r_8" end="28800.00" vehsPerHour="85" type="simple_pkw_as_platoon_leader"/>
+    <!-- f4: 144 -> 72 HDV + 72 CAV -->
+    <flow id="f4_8_HDV" begin="25200.00" departLane="3" arrivalLane="0" route="r_9" end="28800.00" vehsPerHour="72" type="simple_pkw"/>
+    <flow id="f4_8_CAV" begin="25200.00" departLane="3" arrivalLane="0" route="r_9" end="28800.00" vehsPerHour="72" type="simple_pkw_as_platoon_leader"/>
+    <!-- f5: 119 -> 60 HDV + 59 CAV -->
+    <flow id="f5_8_HDV" begin="25200.00" departLane="0" route="r_6" end="28800.00" vehsPerHour="60" type="simple_pkw"/>
+    <flow id="f5_8_CAV" begin="25200.00" departLane="0" route="r_6" end="28800.00" vehsPerHour="59" type="simple_pkw_as_platoon_leader"/>
+    <!-- f6: 192 -> 96 HDV + 96 CAV -->
+    <flow id="f6_8_HDV" begin="25200.00" departLane="1" route="r_5" end="28800.00" vehsPerHour="96" type="simple_pkw"/>
+    <flow id="f6_8_CAV" begin="25200.00" departLane="1" route="r_5" end="28800.00" vehsPerHour="96" type="simple_pkw_as_platoon_leader"/>
+    <!-- f7: 181 -> 91 HDV + 90 CAV -->
+    <flow id="f7_8_HDV" begin="25200.00" departLane="2" route="r_4" end="28800.00" vehsPerHour="91" type="simple_pkw"/>
+    <flow id="f7_8_CAV" begin="25200.00" departLane="2" route="r_4" end="28800.00" vehsPerHour="90" type="simple_pkw_as_platoon_leader"/>
+    <!-- f9: 194 -> 97 HDV + 97 CAV -->
+    <flow id="f9_8_HDV" begin="25200.00" departLane="0" route="r_2" end="28800.00" vehsPerHour="97" type="simple_pkw"/>
+    <flow id="f9_8_CAV" begin="25200.00" departLane="0" route="r_2" end="28800.00" vehsPerHour="97" type="simple_pkw_as_platoon_leader"/>
+    <!-- f10: 193 -> 97 HDV + 96 CAV -->
+    <flow id="f10_8_HDV" begin="25200.00" departLane="1" route="r_2" end="28800.00" vehsPerHour="97" type="simple_pkw"/>
+    <flow id="f10_8_CAV" begin="25200.00" departLane="1" route="r_2" end="28800.00" vehsPerHour="96" type="simple_pkw_as_platoon_leader"/>
+    <!-- f11: 160 -> 80 HDV + 80 CAV -->
+    <flow id="f11_8_HDV" begin="25200.00" departLane="2" route="r_3" end="28800.00" vehsPerHour="80" type="simple_pkw"/>
+    <flow id="f11_8_CAV" begin="25200.00" departLane="2" route="r_3" end="28800.00" vehsPerHour="80" type="simple_pkw_as_platoon_leader"/>
+    <!-- f12: 192 -> 96 HDV + 96 CAV -->
+    <flow id="f12_8_HDV" begin="25200.00" departLane="0" arrivalLane="0" route="r_1" end="28800.00" vehsPerHour="96" type="simple_pkw"/>
+    <flow id="f12_8_CAV" begin="25200.00" departLane="0" arrivalLane="0" route="r_1" end="28800.00" vehsPerHour="96" type="simple_pkw_as_platoon_leader"/>
+    <!-- f13: 193 -> 97 HDV + 96 CAV -->
+    <flow id="f13_8_HDV" begin="25200.00" departLane="1" route="r_0" end="28800.00" vehsPerHour="97" type="simple_pkw"/>
+    <flow id="f13_8_CAV" begin="25200.00" departLane="1" route="r_0" end="28800.00" vehsPerHour="96" type="simple_pkw_as_platoon_leader"/>
+    <!-- f14: 183 -> 92 HDV + 91 CAV -->
+    <flow id="f14_8_HDV" begin="25200.00" departLane="2" route="r_0" end="28800.00" vehsPerHour="92" type="simple_pkw"/>
+    <flow id="f14_8_CAV" begin="25200.00" departLane="2" route="r_0" end="28800.00" vehsPerHour="91" type="simple_pkw_as_platoon_leader"/>
+
+
+    <!-- ============================================ -->
+    <!-- Hour 9: 15:00 - 16:00 (begin=28800, end=32400) -->
+    <!-- ============================================ -->
+    <!-- f1: 198 -> 99 HDV + 99 CAV -->
+    <flow id="f1_9_HDV" begin="28800.00" departLane="0" route="r_7" end="32400.00" vehsPerHour="99" type="simple_pkw"/>
+    <flow id="f1_9_CAV" begin="28800.00" departLane="0" route="r_7" end="32400.00" vehsPerHour="99" type="simple_pkw_as_platoon_leader"/>
+    <!-- f2: 148 -> 74 HDV + 74 CAV -->
+    <flow id="f2_9_HDV" begin="28800.00" departLane="1" route="r_8" end="32400.00" vehsPerHour="74" type="simple_pkw"/>
+    <flow id="f2_9_CAV" begin="28800.00" departLane="1" route="r_8" end="32400.00" vehsPerHour="74" type="simple_pkw_as_platoon_leader"/>
+    <!-- f3: 180 -> 90 HDV + 90 CAV -->
+    <flow id="f3_9_HDV" begin="28800.00" departLane="2" route="r_8" end="32400.00" vehsPerHour="90" type="simple_pkw"/>
+    <flow id="f3_9_CAV" begin="28800.00" departLane="2" route="r_8" end="32400.00" vehsPerHour="90" type="simple_pkw_as_platoon_leader"/>
+    <!-- f4: 154 -> 77 HDV + 77 CAV -->
+    <flow id="f4_9_HDV" begin="28800.00" departLane="3" arrivalLane="0" route="r_9" end="32400.00" vehsPerHour="77" type="simple_pkw"/>
+    <flow id="f4_9_CAV" begin="28800.00" departLane="3" arrivalLane="0" route="r_9" end="32400.00" vehsPerHour="77" type="simple_pkw_as_platoon_leader"/>
+    <!-- f5: 157 -> 79 HDV + 78 CAV -->
+    <flow id="f5_9_HDV" begin="28800.00" departLane="0" route="r_6" end="32400.00" vehsPerHour="79" type="simple_pkw"/>
+    <flow id="f5_9_CAV" begin="28800.00" departLane="0" route="r_6" end="32400.00" vehsPerHour="78" type="simple_pkw_as_platoon_leader"/>
+    <!-- f6: 195 -> 98 HDV + 97 CAV -->
+    <flow id="f6_9_HDV" begin="28800.00" departLane="1" route="r_5" end="32400.00" vehsPerHour="98" type="simple_pkw"/>
+    <flow id="f6_9_CAV" begin="28800.00" departLane="1" route="r_5" end="32400.00" vehsPerHour="97" type="simple_pkw_as_platoon_leader"/>
+    <!-- f7: 198 -> 99 HDV + 99 CAV -->
+    <flow id="f7_9_HDV" begin="28800.00" departLane="2" route="r_4" end="32400.00" vehsPerHour="99" type="simple_pkw"/>
+    <flow id="f7_9_CAV" begin="28800.00" departLane="2" route="r_4" end="32400.00" vehsPerHour="99" type="simple_pkw_as_platoon_leader"/>
+    <!-- f9: 222 -> 111 HDV + 111 CAV -->
+    <flow id="f9_9_HDV" begin="28800.00" departLane="0" route="r_2" end="32400.00" vehsPerHour="111" type="simple_pkw"/>
+    <flow id="f9_9_CAV" begin="28800.00" departLane="0" route="r_2" end="32400.00" vehsPerHour="111" type="simple_pkw_as_platoon_leader"/>
+    <!-- f10: 200 -> 100 HDV + 100 CAV -->
+    <flow id="f10_9_HDV" begin="28800.00" departLane="1" route="r_2" end="32400.00" vehsPerHour="100" type="simple_pkw"/>
+    <flow id="f10_9_CAV" begin="28800.00" departLane="1" route="r_2" end="32400.00" vehsPerHour="100" type="simple_pkw_as_platoon_leader"/>
+    <!-- f11: 143 -> 72 HDV + 71 CAV -->
+    <flow id="f11_9_HDV" begin="28800.00" departLane="2" route="r_3" end="32400.00" vehsPerHour="72" type="simple_pkw"/>
+    <flow id="f11_9_CAV" begin="28800.00" departLane="2" route="r_3" end="32400.00" vehsPerHour="71" type="simple_pkw_as_platoon_leader"/>
+    <!-- f12: 169 -> 85 HDV + 84 CAV -->
+    <flow id="f12_9_HDV" begin="28800.00" departLane="0" arrivalLane="0" route="r_1" end="32400.00" vehsPerHour="85" type="simple_pkw"/>
+    <flow id="f12_9_CAV" begin="28800.00" departLane="0" arrivalLane="0" route="r_1" end="32400.00" vehsPerHour="84" type="simple_pkw_as_platoon_leader"/>
+    <!-- f13: 191 -> 96 HDV + 95 CAV -->
+    <flow id="f13_9_HDV" begin="28800.00" departLane="1" route="r_0" end="32400.00" vehsPerHour="96" type="simple_pkw"/>
+    <flow id="f13_9_CAV" begin="28800.00" departLane="1" route="r_0" end="32400.00" vehsPerHour="95" type="simple_pkw_as_platoon_leader"/>
+    <!-- f14: 171 -> 86 HDV + 85 CAV -->
+    <flow id="f14_9_HDV" begin="28800.00" departLane="2" route="r_0" end="32400.00" vehsPerHour="86" type="simple_pkw"/>
+    <flow id="f14_9_CAV" begin="28800.00" departLane="2" route="r_0" end="32400.00" vehsPerHour="85" type="simple_pkw_as_platoon_leader"/>
+
+    <!-- ============================================ -->
+    <!-- Hour 10: 16:00 - 17:00 (begin=32400, end=36000) -->
+    <!-- ============================================ -->
+    <!-- f1: 221 -> 111 HDV + 110 CAV -->
+    <flow id="f1_10_HDV" begin="32400.00" departLane="0" route="r_7" end="36000.00" vehsPerHour="111" type="simple_pkw"/>
+    <flow id="f1_10_CAV" begin="32400.00" departLane="0" route="r_7" end="36000.00" vehsPerHour="110" type="simple_pkw_as_platoon_leader"/>
+    <!-- f2: 164 -> 82 HDV + 82 CAV -->
+    <flow id="f2_10_HDV" begin="32400.00" departLane="1" route="r_8" end="36000.00" vehsPerHour="82" type="simple_pkw"/>
+    <flow id="f2_10_CAV" begin="32400.00" departLane="1" route="r_8" end="36000.00" vehsPerHour="82" type="simple_pkw_as_platoon_leader"/>
+    <!-- f3: 189 -> 95 HDV + 94 CAV -->
+    <flow id="f3_10_HDV" begin="32400.00" departLane="2" route="r_8" end="36000.00" vehsPerHour="95" type="simple_pkw"/>
+    <flow id="f3_10_CAV" begin="32400.00" departLane="2" route="r_8" end="36000.00" vehsPerHour="94" type="simple_pkw_as_platoon_leader"/>
+    <!-- f4: 169 -> 85 HDV + 84 CAV -->
+    <flow id="f4_10_HDV" begin="32400.00" departLane="3" arrivalLane="0" route="r_9" end="36000.00" vehsPerHour="85" type="simple_pkw"/>
+    <flow id="f4_10_CAV" begin="32400.00" departLane="3" arrivalLane="0" route="r_9" end="36000.00" vehsPerHour="84" type="simple_pkw_as_platoon_leader"/>
+    <!-- f5: 150 -> 75 HDV + 75 CAV -->
+    <flow id="f5_10_HDV" begin="32400.00" departLane="0" route="r_6" end="36000.00" vehsPerHour="75" type="simple_pkw"/>
+    <flow id="f5_10_CAV" begin="32400.00" departLane="0" route="r_6" end="36000.00" vehsPerHour="75" type="simple_pkw_as_platoon_leader"/>
+    <!-- f6: 187 -> 94 HDV + 93 CAV -->
+    <flow id="f6_10_HDV" begin="32400.00" departLane="1" route="r_5" end="36000.00" vehsPerHour="94" type="simple_pkw"/>
+    <flow id="f6_10_CAV" begin="32400.00" departLane="1" route="r_5" end="36000.00" vehsPerHour="93" type="simple_pkw_as_platoon_leader"/>
+    <!-- f7: 221 -> 111 HDV + 110 CAV -->
+    <flow id="f7_10_HDV" begin="32400.00" departLane="2" route="r_4" end="36000.00" vehsPerHour="111" type="simple_pkw"/>
+    <flow id="f7_10_CAV" begin="32400.00" departLane="2" route="r_4" end="36000.00" vehsPerHour="110" type="simple_pkw_as_platoon_leader"/>
+    <!-- f9: 229 -> 115 HDV + 114 CAV -->
+    <flow id="f9_10_HDV" begin="32400.00" departLane="0" route="r_2" end="36000.00" vehsPerHour="115" type="simple_pkw"/>
+    <flow id="f9_10_CAV" begin="32400.00" departLane="0" route="r_2" end="36000.00" vehsPerHour="114" type="simple_pkw_as_platoon_leader"/>
+    <!-- f10: 228 -> 114 HDV + 114 CAV -->
+    <flow id="f10_10_HDV" begin="32400.00" departLane="1" route="r_2" end="36000.00" vehsPerHour="114" type="simple_pkw"/>
+    <flow id="f10_10_CAV" begin="32400.00" departLane="1" route="r_2" end="36000.00" vehsPerHour="114" type="simple_pkw_as_platoon_leader"/>
+    <!-- f11: 170 -> 85 HDV + 85 CAV -->
+    <flow id="f11_10_HDV" begin="32400.00" departLane="2" route="r_3" end="36000.00" vehsPerHour="85" type="simple_pkw"/>
+    <flow id="f11_10_CAV" begin="32400.00" departLane="2" route="r_3" end="36000.00" vehsPerHour="85" type="simple_pkw_as_platoon_leader"/>
+    <!-- f12: 146 -> 73 HDV + 73 CAV -->
+    <flow id="f12_10_HDV" begin="32400.00" departLane="0" arrivalLane="0" route="r_1" end="36000.00" vehsPerHour="73" type="simple_pkw"/>
+    <flow id="f12_10_CAV" begin="32400.00" departLane="0" arrivalLane="0" route="r_1" end="36000.00" vehsPerHour="73" type="simple_pkw_as_platoon_leader"/>
+    <!-- f13: 173 -> 87 HDV + 86 CAV -->
+    <flow id="f13_10_HDV" begin="32400.00" departLane="1" route="r_0" end="36000.00" vehsPerHour="87" type="simple_pkw"/>
+    <flow id="f13_10_CAV" begin="32400.00" departLane="1" route="r_0" end="36000.00" vehsPerHour="86" type="simple_pkw_as_platoon_leader"/>
+    <!-- f14: 179 -> 90 HDV + 89 CAV -->
+    <flow id="f14_10_HDV" begin="32400.00" departLane="2" route="r_0" end="36000.00" vehsPerHour="90" type="simple_pkw"/>
+    <flow id="f14_10_CAV" begin="32400.00" departLane="2" route="r_0" end="36000.00" vehsPerHour="89" type="simple_pkw_as_platoon_leader"/>
+
+    <!-- ============================================ -->
+    <!-- Hour 11: 17:00 - 18:00 (begin=36000, end=39600) -->
+    <!-- ============================================ -->
+    <!-- f1: 221 -> 111 HDV + 110 CAV -->
+    <flow id="f1_11_HDV" begin="36000.00" departLane="0" route="r_7" end="39600.00" vehsPerHour="111" type="simple_pkw"/>
+    <flow id="f1_11_CAV" begin="36000.00" departLane="0" route="r_7" end="39600.00" vehsPerHour="110" type="simple_pkw_as_platoon_leader"/>
+    <!-- f2: 195 -> 98 HDV + 97 CAV -->
+    <flow id="f2_11_HDV" begin="36000.00" departLane="1" route="r_8" end="39600.00" vehsPerHour="98" type="simple_pkw"/>
+    <flow id="f2_11_CAV" begin="36000.00" departLane="1" route="r_8" end="39600.00" vehsPerHour="97" type="simple_pkw_as_platoon_leader"/>
+    <!-- f3: 200 -> 100 HDV + 100 CAV -->
+    <flow id="f3_11_HDV" begin="36000.00" departLane="2" route="r_8" end="39600.00" vehsPerHour="100" type="simple_pkw"/>
+    <flow id="f3_11_CAV" begin="36000.00" departLane="2" route="r_8" end="39600.00" vehsPerHour="100" type="simple_pkw_as_platoon_leader"/>
+    <!-- f4: 174 -> 87 HDV + 87 CAV -->
+    <flow id="f4_11_HDV" begin="36000.00" departLane="3" arrivalLane="0" route="r_9" end="39600.00" vehsPerHour="87" type="simple_pkw"/>
+    <flow id="f4_11_CAV" begin="36000.00" departLane="3" arrivalLane="0" route="r_9" end="39600.00" vehsPerHour="87" type="simple_pkw_as_platoon_leader"/>
+    <!-- f5: 179 -> 90 HDV + 89 CAV -->
+    <flow id="f5_11_HDV" begin="36000.00" departLane="0" route="r_6" end="39600.00" vehsPerHour="90" type="simple_pkw"/>
+    <flow id="f5_11_CAV" begin="36000.00" departLane="0" route="r_6" end="39600.00" vehsPerHour="89" type="simple_pkw_as_platoon_leader"/>
+    <!-- f6: 254 -> 127 HDV + 127 CAV -->
+    <flow id="f6_11_HDV" begin="36000.00" departLane="1" route="r_5" end="39600.00" vehsPerHour="127" type="simple_pkw"/>
+    <flow id="f6_11_CAV" begin="36000.00" departLane="1" route="r_5" end="39600.00" vehsPerHour="127" type="simple_pkw_as_platoon_leader"/>
+    <!-- f7: 221 -> 111 HDV + 110 CAV -->
+    <flow id="f7_11_HDV" begin="36000.00" departLane="2" route="r_4" end="39600.00" vehsPerHour="111" type="simple_pkw"/>
+    <flow id="f7_11_CAV" begin="36000.00" departLane="2" route="r_4" end="39600.00" vehsPerHour="110" type="simple_pkw_as_platoon_leader"/>
+    <!-- f9: 219 -> 110 HDV + 109 CAV -->
+    <flow id="f9_11_HDV" begin="36000.00" departLane="0" route="r_2" end="39600.00" vehsPerHour="110" type="simple_pkw"/>
+    <flow id="f9_11_CAV" begin="36000.00" departLane="0" route="r_2" end="39600.00" vehsPerHour="109" type="simple_pkw_as_platoon_leader"/>
+    <!-- f10: 217 -> 109 HDV + 108 CAV -->
+    <flow id="f10_11_HDV" begin="36000.00" departLane="1" route="r_2" end="39600.00" vehsPerHour="109" type="simple_pkw"/>
+    <flow id="f10_11_CAV" begin="36000.00" departLane="1" route="r_2" end="39600.00" vehsPerHour="108" type="simple_pkw_as_platoon_leader"/>
+    <!-- f11: 190 -> 95 HDV + 95 CAV -->
+    <flow id="f11_11_HDV" begin="36000.00" departLane="2" route="r_3" end="39600.00" vehsPerHour="95" type="simple_pkw"/>
+    <flow id="f11_11_CAV" begin="36000.00" departLane="2" route="r_3" end="39600.00" vehsPerHour="95" type="simple_pkw_as_platoon_leader"/>
+    <!-- f12: 177 -> 89 HDV + 88 CAV -->
+    <flow id="f12_11_HDV" begin="36000.00" departLane="0" arrivalLane="0" route="r_1" end="39600.00" vehsPerHour="89" type="simple_pkw"/>
+    <flow id="f12_11_CAV" begin="36000.00" departLane="0" arrivalLane="0" route="r_1" end="39600.00" vehsPerHour="88" type="simple_pkw_as_platoon_leader"/>
+    <!-- f13: 197 -> 99 HDV + 98 CAV -->
+    <flow id="f13_11_HDV" begin="36000.00" departLane="1" route="r_0" end="39600.00" vehsPerHour="99" type="simple_pkw"/>
+    <flow id="f13_11_CAV" begin="36000.00" departLane="1" route="r_0" end="39600.00" vehsPerHour="98" type="simple_pkw_as_platoon_leader"/>
+    <!-- f14: 186 -> 93 HDV + 93 CAV -->
+    <flow id="f14_11_HDV" begin="36000.00" departLane="2" route="r_0" end="39600.00" vehsPerHour="93" type="simple_pkw"/>
+    <flow id="f14_11_CAV" begin="36000.00" departLane="2" route="r_0" end="39600.00" vehsPerHour="93" type="simple_pkw_as_platoon_leader"/>
+
+    <!-- ============================================ -->
+    <!-- Hour 12: 18:00 - 19:00 (begin=39600, end=43200) -->
+    <!-- ============================================ -->
+    <!-- f1: 245 -> 123 HDV + 122 CAV -->
+    <flow id="f1_12_HDV" begin="39600.00" departLane="0" route="r_7" end="43200.00" vehsPerHour="123" type="simple_pkw"/>
+    <flow id="f1_12_CAV" begin="39600.00" departLane="0" route="r_7" end="43200.00" vehsPerHour="122" type="simple_pkw_as_platoon_leader"/>
+    <!-- f2: 201 -> 101 HDV + 100 CAV -->
+    <flow id="f2_12_HDV" begin="39600.00" departLane="1" route="r_8" end="43200.00" vehsPerHour="101" type="simple_pkw"/>
+    <flow id="f2_12_CAV" begin="39600.00" departLane="1" route="r_8" end="43200.00" vehsPerHour="100" type="simple_pkw_as_platoon_leader"/>
+    <!-- f3: 220 -> 110 HDV + 110 CAV -->
+    <flow id="f3_12_HDV" begin="39600.00" departLane="2" route="r_8" end="43200.00" vehsPerHour="110" type="simple_pkw"/>
+    <flow id="f3_12_CAV" begin="39600.00" departLane="2" route="r_8" end="43200.00" vehsPerHour="110" type="simple_pkw_as_platoon_leader"/>
+    <!-- f4: 200 -> 100 HDV + 100 CAV -->
+    <flow id="f4_12_HDV" begin="39600.00" departLane="3" arrivalLane="0" route="r_9" end="43200.00" vehsPerHour="100" type="simple_pkw"/>
+    <flow id="f4_12_CAV" begin="39600.00" departLane="3" arrivalLane="0" route="r_9" end="43200.00" vehsPerHour="100" type="simple_pkw_as_platoon_leader"/>
+    <!-- f5: 234 -> 117 HDV + 117 CAV -->
+    <flow id="f5_12_HDV" begin="39600.00" departLane="0" route="r_6" end="43200.00" vehsPerHour="117" type="simple_pkw"/>
+    <flow id="f5_12_CAV" begin="39600.00" departLane="0" route="r_6" end="43200.00" vehsPerHour="117" type="simple_pkw_as_platoon_leader"/>
+    <!-- f6: 223 -> 112 HDV + 111 CAV -->
+    <flow id="f6_12_HDV" begin="39600.00" departLane="1" route="r_5" end="43200.00" vehsPerHour="112" type="simple_pkw"/>
+    <flow id="f6_12_CAV" begin="39600.00" departLane="1" route="r_5" end="43200.00" vehsPerHour="111" type="simple_pkw_as_platoon_leader"/>
+    <!-- f7: 245 -> 123 HDV + 122 CAV -->
+    <flow id="f7_12_HDV" begin="39600.00" departLane="2" route="r_4" end="43200.00" vehsPerHour="123" type="simple_pkw"/>
+    <flow id="f7_12_CAV" begin="39600.00" departLane="2" route="r_4" end="43200.00" vehsPerHour="122" type="simple_pkw_as_platoon_leader"/>
+    <!-- f9: 259 -> 130 HDV + 129 CAV -->
+    <flow id="f9_12_HDV" begin="39600.00" departLane="0" route="r_2" end="43200.00" vehsPerHour="130" type="simple_pkw"/>
+    <flow id="f9_12_CAV" begin="39600.00" departLane="0" route="r_2" end="43200.00" vehsPerHour="129" type="simple_pkw_as_platoon_leader"/>
+    <!-- f10: 263 -> 132 HDV + 131 CAV -->
+    <flow id="f10_12_HDV" begin="39600.00" departLane="1" route="r_2" end="43200.00" vehsPerHour="132" type="simple_pkw"/>
+    <flow id="f10_12_CAV" begin="39600.00" departLane="1" route="r_2" end="43200.00" vehsPerHour="131" type="simple_pkw_as_platoon_leader"/>
+    <!-- f11: 209 -> 105 HDV + 104 CAV -->
+    <flow id="f11_12_HDV" begin="39600.00" departLane="2" route="r_3" end="43200.00" vehsPerHour="105" type="simple_pkw"/>
+    <flow id="f11_12_CAV" begin="39600.00" departLane="2" route="r_3" end="43200.00" vehsPerHour="104" type="simple_pkw_as_platoon_leader"/>
+    <!-- f12: 180 -> 90 HDV + 90 CAV -->
+    <flow id="f12_12_HDV" begin="39600.00" departLane="0" arrivalLane="0" route="r_1" end="43200.00" vehsPerHour="90" type="simple_pkw"/>
+    <flow id="f12_12_CAV" begin="39600.00" departLane="0" arrivalLane="0" route="r_1" end="43200.00" vehsPerHour="90" type="simple_pkw_as_platoon_leader"/>
+    <!-- f13: 150 -> 75 HDV + 75 CAV -->
+    <flow id="f13_12_HDV" begin="39600.00" departLane="1" route="r_0" end="43200.00" vehsPerHour="75" type="simple_pkw"/>
+    <flow id="f13_12_CAV" begin="39600.00" departLane="1" route="r_0" end="43200.00" vehsPerHour="75" type="simple_pkw_as_platoon_leader"/>
+    <!-- f14: 167 -> 84 HDV + 83 CAV -->
+    <flow id="f14_12_HDV" begin="39600.00" departLane="2" route="r_0" end="43200.00" vehsPerHour="84" type="simple_pkw"/>
+    <flow id="f14_12_CAV" begin="39600.00" departLane="2" route="r_0" end="43200.00" vehsPerHour="83" type="simple_pkw_as_platoon_leader"/>
+
+
+</routes>
