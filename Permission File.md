@@ -7,3 +7,9 @@ If you use Tehran data, you must cite to this paper:
 Paper Link: www.sciencedirect.com/science/article/pii/S2215098626001382
 
 DOI Link: doi.org/10.1016/j.jestch.2026.102412
+
+If you use Dublin data, you must cite to this paper:
+
+Paper Link: www.sciencedirect.com/science/article/pii/S0001457526002459
+
+DOI Link: doi.org/10.1016/j.aap.2026.108636
